@@ -2,7 +2,7 @@ import {expect} from 'chai'
 import {zip} from '../src/zip'
 
 describe('zip', () => {
-  it('should reverse the arguments', () => {
+  it('should return the first item in each array in one array and the second in another', () => {
     const result = zip([0, 5], [1, 10])
     expect(result).to.deep.equal([[0, 1], [5, 10]])
   })
