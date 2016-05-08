@@ -1,4 +1,4 @@
-export const zip = (left: [any], right: [any], combinerFunction?: Function) => {
+export const zip = (left: any[], right: any[], combinerFunction?: Function): any[] => {
   const results = []
 
   for (let i = 0; i < Math.min(left.length, right.length); i += 1) {
