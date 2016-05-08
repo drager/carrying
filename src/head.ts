@@ -1,1 +1,1 @@
-export const head = (list: [any]) => list[0]: any 
+export const head = (list: [any]): any => list[0]
