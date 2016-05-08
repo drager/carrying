@@ -1,0 +1,1 @@
+export const head = (list: [any]) => list[0]: any 

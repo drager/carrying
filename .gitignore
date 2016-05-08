@@ -1,0 +1,16 @@
+# OSX
+.DS_Store
+
+# typings
+*typings/tsd.d.ts
+
+*.db
+
+# Build chain
+.tmp/
+dist/
+*/tsconfig.json
+
+# node.js
+node_modules/
+npm-debug.log
