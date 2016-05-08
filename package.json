@@ -14,7 +14,8 @@
     "test": "npm-run-all test:*",
     "test:build": "npm run build && webpack --config webpack.tests.config.js",
     "test:unit": "mocha -r babel-polyfill -r source-map-support/register  'dist/*.spec.js'",
-    "test-watch": "npm run test:unit -- --watch"
+    "test-watch": "npm run test:unit -- --watch",
+    "generate-docs": "tsc && esdoc -c esdoc.json"
   },
   "author": "Jesper Håkansson",
   "license": "Apache-2.0",
@@ -42,5 +43,7 @@
     "typescript": "^1.9.0-dev.20160428-1.0",
     "webpack": "^1.13.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "esdoc": "^0.4.7"
+  }
 }
