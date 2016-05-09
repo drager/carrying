@@ -6,10 +6,13 @@
  * @param {Array|String} list
  * @return {any}
  * @example
+ *   head(range(1, 11)) // => 1
  *   head([1, 2, 3]) //=> 1
  *   head([]) //=> undefined
  *
- *   head('abc') //=> 'a'
- *   head(''); //=> undefined
+ *   head('abc') //=> 'c'
+ *   head('ze') // => 'z'
+ *   head('q') // => 'q'
+ *   head('') //=> undefined
  */
 export const head = (list: any[]|string): any => list[0]
