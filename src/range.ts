@@ -5,7 +5,7 @@ import {curry} from './curry'
  * @since v0.1.0
  * @param {number} start - The start value for the range
  * @param {number} stop - The stop value for the range
- * @param {number} step? - A optional step value
+ * @param {number} [step] - A optional step value
  * @return {Array} Either value or replaceValue
  * @example
  *   range(1, 3) // => [1, 2]

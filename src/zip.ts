@@ -4,7 +4,7 @@
  * @since v0.1.0
  * @param {Array} left - The left (first) array
  * @param {Array} right - The right (second) array
- * @param {Function} combinerFunction? - A optional combiner function
+ * @param {Function} [combinerFunction] - A optional combiner function
  * @return {Array} Returns a list of corresponding pairs
  * @example
  *   zip([0, 5], [1, 10]) // => [[0, 1], [5, 10]]
