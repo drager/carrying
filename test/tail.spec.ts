@@ -2,6 +2,7 @@ import {expect} from 'chai'
 import {range} from '../src/range'
 import {tail} from '../src/tail'
 
+/** @test {tail} */
 describe('tail', () => {
   it('should return the tail of a list', () => {
     expect(tail(range(1, 11))).to.deep.equal([2, 3, 4, 5, 6, 7, 8, 9, 10])

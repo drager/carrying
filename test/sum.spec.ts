@@ -1,6 +1,7 @@
 import {expect} from 'chai'
 import {sum} from '../src/sum'
 
+/** @test {sum} */
 describe('sum', () => {
   it('should summarize list of numbers', () => {
     expect(sum([1, 2, 3])).to.equal(6)

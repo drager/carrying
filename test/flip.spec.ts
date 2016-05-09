@@ -1,6 +1,7 @@
 import {expect} from 'chai'
 import {flip} from '../src/flip'
 
+/** @test {flip} */
 describe('flip', () => {
   it('should reverse the arguments', () => {
     const merge = (a, b) => [].concat(a, b)

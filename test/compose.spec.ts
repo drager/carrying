@@ -1,6 +1,7 @@
 import {expect} from 'chai'
 import {compose} from '../src/compose'
 
+/** @test {compose} */
 describe('compose', () => {
   it('should return a function', () => {
     const f = compose(

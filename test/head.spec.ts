@@ -1,6 +1,7 @@
 import {expect} from 'chai'
 import {head} from '../src/head'
 
+/** @test {head} */
 describe('head', () => {
   it('should return the head of a list', () => {
     expect(head([1, 2, 3])).to.equal(1)

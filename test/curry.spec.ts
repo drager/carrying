@@ -1,6 +1,7 @@
 import {expect} from 'chai'
 import {curry} from '../src/curry'
 
+/** @test {curry} */
 describe('curry', () => {
   it('should return a curried function', () => {
     const greeter = (greeting, name) => `${greeting} ${name}`

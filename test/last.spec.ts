@@ -1,6 +1,7 @@
 import {expect} from 'chai'
 import {last} from '../src/last'
 
+/** @test {last} */
 describe('last', () => {
   it('should return the last element of a list', () => {
     expect(last([1, 2, 3])).to.equal(3)

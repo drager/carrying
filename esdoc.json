@@ -1,4 +1,9 @@
 {
   "source": "./lib",
-  "destination": "./docs"
+  "destination": "./docs",
+  "test": {
+    "type": "mocha",
+    "source": "./test",
+    "includes": ["(spec)\\.(js|ts)$"]
+  }
 }

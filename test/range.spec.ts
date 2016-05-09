@@ -1,6 +1,7 @@
 import {expect} from 'chai'
 import {range} from '../src/range'
 
+/** @test {range} */
 describe('range', () => {
   it('should produce a range between a start and stop', () => {
     expect(range(1, 3)).to.deep.equal([1, 2])

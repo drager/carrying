@@ -1,6 +1,7 @@
 import {expect} from 'chai'
 import {nullAware} from '../src/nullAware'
 
+/** @test {nullAware} */
 describe('nullAware', () => {
   it('should return value if first parameter is null', () => {
     let x = null

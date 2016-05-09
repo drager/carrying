@@ -2,6 +2,7 @@ import {expect} from 'chai'
 import {range} from '../src/range'
 import {uncons} from '../src/uncons'
 
+/** @test {uncons} */
 describe('uncons', () => {
   it('should decompose a list into its head and tail', () => {
     expect(uncons(range(1, 11))).to.deep.equal([[1], [2, 3, 4, 5, 6, 7, 8, 9, 10]])
