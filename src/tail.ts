@@ -19,7 +19,7 @@ import {head} from './head'
  *   tail('q') // => ['q']
  *   tail('') //=> undefined
  */
-export const tail = list => {
+export const tail = (list: any[]|string): any => {
   if (list.length === 0) return undefined
   const results = []
 

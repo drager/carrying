@@ -18,7 +18,7 @@ import {tail} from './tail'
  *   uncons('q') // => 'q'
  *   uncons('') //=> undefined
  */
-export const uncons = list => {
+export const uncons = (list: any[]|string): any => {
   if (list.length === 0) return undefined
   return list.length > 1
     ? [[head(list)], [...tail(list)]]

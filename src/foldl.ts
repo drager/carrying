@@ -14,7 +14,7 @@ import {head} from './head'
  *   const add = (prev, current) => prev + current
  *   foldl(add)([1, 2, 3]) // => 6
  */
-export const foldl = (fn: Function) => (list, accumulator = head(list), index = 0) => {
+export const foldl = (fn: Function) => (list: any[], accumulator = head(list), index = 0) => {
   let result
   if (index === list.length - 1) {
     result = accumulator
