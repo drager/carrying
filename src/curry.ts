@@ -3,7 +3,6 @@ import {curryN} from './curryN'
 /**
  * Returns a curried variant of the provided function.
  *
- * @function
  * @since v0.1.0
  * @param {Function} fn - The function to be curried
  * @return {Function} The curried function
@@ -18,4 +17,6 @@ import {curryN} from './curryN'
  *   const addThree = curriedAdd(3)
  *   addThree(50) // => 53
  */
-export const curry = (fn: Function): Function => curryN(fn.length)(fn)
+export function curry(fn: Function): Function {
+  return curryN(fn.length)(fn)
+}

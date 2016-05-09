@@ -3,7 +3,6 @@ import {head} from './head'
 /**
  * Extracts the elements after the head of a list.
  *
- * @function
  * @since v0.1.0
  * @param {Array} list - The array
  * @return {Array} - The tail of the list
@@ -19,7 +18,7 @@ import {head} from './head'
  *   tail('q') // => ['q']
  *   tail('') //=> undefined
  */
-export const tail = (list: any[]|string): any => {
+export function tail(list: any[]|string): any {
   if (list.length === 0) return undefined
   const results = []
 

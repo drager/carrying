@@ -1,7 +1,6 @@
 /**
  * Extract the last element of a list.
  *
- * @function
  * @since v0.1.0
  * @param {Array} list - The array
  * @return {Array} - The last element of the list
@@ -15,4 +14,6 @@
  *   last('q') // => 'q'
  *   last('') //=> undefined
  */
-export const last = (list: any[]|string): any => list[list.length - 1]
+export function last(list: any[]|string): any {
+  return list[list.length - 1]
+}

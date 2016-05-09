@@ -4,7 +4,6 @@
  * or undefined it will just return the supposed to be null value, that is the
  * first parameter.
  *
- * @function
  * @since v0.1.0
  * @param {any} value - The value to be checked
  * @param {any} replaceValue - The value that should be returned if the first
@@ -14,7 +13,8 @@
  *   let x = null
  *   x = nullAware(x, 'are null-aware, friendly to') // => 'are null-aware, friendly to'
  */
-export const nullAware = (value: any, replaceValue: any): any =>
-  (value === null || typeof value === 'undefined')
+export function nullAware(value: any, replaceValue: any): any {
+  return (value === null || typeof value === 'undefined')
     ? replaceValue
     : value
+}

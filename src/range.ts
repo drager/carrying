@@ -2,7 +2,6 @@ import {curry} from './curry'
 /**
  * Produces an list in the given range.
  *
- * @function
  * @since v0.1.0
  * @param {number} start - The start value for the range
  * @param {number} stop - The stop value for the range
@@ -17,10 +16,11 @@ import {curry} from './curry'
  *
  *   range(1, 10, 2) // => [1, 3, 5, 7, 9]
  */
-export const range = (start: number, stop: number, step?: number): any[] =>
-  step
+export function range(start: number, stop: number, step?: number): any[] {
+  return step
     ? iterate(start, stop, step)([])
     : iterate(start, stop, 1)([])
+}
 
 const iterate = curry((start, stop, step, list) => {
   const newList = [...list]

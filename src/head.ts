@@ -1,7 +1,6 @@
 /**
  * Returns the first element of the given list or string.
  *
- * @function
  * @since v0.1.0
  * @param {Array|String} list
  * @return {any}
@@ -15,4 +14,6 @@
  *   head('q') // => 'q'
  *   head('') //=> undefined
  */
-export const head = (list: any[]|string): any => list[0]
+export function head(list: any[]|string): any {
+  return list[0]
+}

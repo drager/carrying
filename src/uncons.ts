@@ -4,7 +4,6 @@ import {tail} from './tail'
 /**
  * Decomposes a list into its head and tail.
  *
- * @function
  * @since v0.1.0
  * @param {Array|String} list
  * @return {Array}
@@ -18,7 +17,7 @@ import {tail} from './tail'
  *   uncons('q') // => 'q'
  *   uncons('') //=> undefined
  */
-export const uncons = (list: any[]|string): any => {
+export function uncons(list: any[]|string): any {
   if (list.length === 0) return undefined
   return list.length > 1
     ? [[head(list)], [...tail(list)]]
