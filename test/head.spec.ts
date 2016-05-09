@@ -13,12 +13,12 @@ describe('head', () => {
   })
 
   it('should return the head of a string', () => {
-    expect(head('abc' as any)).to.equal('a')
-    expect(head('ze' as any)).to.equal('z')
-    expect(head('q' as any)).to.equal('q')
+    expect(head('abc')).to.equal('a')
+    expect(head('ze')).to.equal('z')
+    expect(head('q')).to.equal('q')
   })
 
   it('should return undefined on an empty string', () => {
-    expect(head('' as any)).to.equal(undefined)
+    expect(head('')).to.equal(undefined)
   })
 })

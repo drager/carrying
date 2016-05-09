@@ -15,12 +15,12 @@ describe('tail', () => {
   })
 
   it('should return the tail of a string', () => {
-    expect(tail('abc' as any)).to.deep.equal(['b', 'c'])
-    expect(tail('ze' as any)).to.deep.equal(['e'])
-    expect(tail('q' as any)).to.deep.equal(['q'])
+    expect(tail('abc')).to.deep.equal(['b', 'c'])
+    expect(tail('ze')).to.deep.equal(['e'])
+    expect(tail('q')).to.deep.equal(['q'])
   })
 
   it('should return undefined on an empty string', () => {
-    expect(tail('' as any)).to.be.undefined
+    expect(tail('')).to.be.undefined
   })
 })

@@ -13,12 +13,12 @@ describe('last', () => {
   })
 
   it('should return the last character of a string', () => {
-    expect(last('abc' as any)).to.equal('c')
-    expect(last('ze' as any)).to.equal('e')
-    expect(last('q' as any)).to.equal('q')
+    expect(last('abc')).to.equal('c')
+    expect(last('ze')).to.equal('e')
+    expect(last('q')).to.equal('q')
   })
 
   it('should return undefined on an empty string', () => {
-    expect(last('' as any)).to.equal(undefined)
+    expect(last('')).to.equal(undefined)
   })
 })

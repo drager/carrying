@@ -15,12 +15,12 @@ describe('uncons', () => {
   })
 
   it('should decompose a string into its head and tail', () => {
-    expect(uncons('abc' as any)).to.deep.equal([['a'], ['b', 'c']])
-    expect(uncons('ze' as any)).to.deep.equal([['z'], ['e']])
-    expect(uncons('q' as any)).to.deep.equal(['q'])
+    expect(uncons('abc')).to.deep.equal([['a'], ['b', 'c']])
+    expect(uncons('ze')).to.deep.equal([['z'], ['e']])
+    expect(uncons('q')).to.deep.equal(['q'])
   })
 
   it('should return undefined on an empty string', () => {
-    expect(uncons('' as any)).to.be.undefined
+    expect(uncons('')).to.be.undefined
   })
 })
