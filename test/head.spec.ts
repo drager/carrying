@@ -9,7 +9,7 @@ describe('head', () => {
   })
 
   it('should return undefined on an empty list', () => {
-    expect(head([])).to.equal(undefined)
+    expect(head([])).to.be.undefined
   })
 
   it('should return the head of a string', () => {
@@ -19,6 +19,6 @@ describe('head', () => {
   })
 
   it('should return undefined on an empty string', () => {
-    expect(head('')).to.equal(undefined)
+    expect(head('')).to.be.undefined
   })
 })

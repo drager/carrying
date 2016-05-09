@@ -3,8 +3,7 @@ import {zip} from '../src/zip'
 
 describe('zip', () => {
   it('should return the first item in each array in one array and the second in another', () => {
-    const result = zip([0, 5], [1, 10])
-    expect(result).to.deep.equal([[0, 1], [5, 10]])
+    expect(zip([0, 5], [1, 10])).to.deep.equal([[0, 1], [5, 10]])
   })
 
   it('should apply combinerFunction if provided', () => {
