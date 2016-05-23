@@ -16,6 +16,7 @@ const config = {
   output: {
     path: './dist',
     filename: 'carrying.js',
+    libraryTarget: 'umd',
     devtoolModuleFilenameTemplate: '/[absolute-resource-path]',
   },
   debug: !production,
@@ -23,7 +24,7 @@ const config = {
   module: {
     loaders: [
       {
-        test: /(\.spec?)\.ts$/,
+        test: /(\.spec?)?\.ts/,
         exclude: /node_modules/,
         loaders: [
           'babel?' + JSON.stringify({
@@ -38,7 +39,7 @@ const config = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.ts', '.tsx'],
+    extensions: ['', '.js', '.ts'],
     modulesDirectories: ['node_modules', path.resolve('./node_modules')],
   },
   plugins: [
