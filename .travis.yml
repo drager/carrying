@@ -1,0 +1,11 @@
+language: node_js
+
+node_js:
+  - "stable"
+
+script: ./tools/travis.sh
+after_success: ./tools/deploy.sh
+
+branches:
+  only:
+    - master
