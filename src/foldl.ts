@@ -4,7 +4,8 @@ import {head} from './head'
  * to reduce it to a single value. (also known variously as reduce).
  *
  * @since v0.1.0
- * @param {Function} fn - The accumlating function, the function to execute on each value in the array
+ * @param {Function} fn - The accumlating function, the function to
+ * execute on each value in the array
  * @param {Array} list - The list we should accumlate
  * @param {any} accumlator -
  * @param {number} index -

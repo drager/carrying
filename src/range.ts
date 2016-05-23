@@ -1,4 +1,4 @@
-import {curry} from './curry'
+import {iterate} from './helpers'
 /**
  * Produces an list in the given range.
  *
@@ -21,11 +21,3 @@ export function range(start: number, stop: number, step?: number): any[] {
     ? iterate(start, stop, step)([])
     : iterate(start, stop, 1)([])
 }
-
-const iterate = curry((start, stop, step, list) => {
-  const newList = [...list]
-  for (let i = start; i < stop; i +=step) {
-    newList.push(i)
-  }
-  return newList
-})

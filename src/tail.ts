@@ -1,5 +1,3 @@
-import {head} from './head'
-
 /**
  * Extracts the elements after the head of a list.
  *
