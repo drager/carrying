@@ -15,7 +15,7 @@ npm install --save carrying
 ## Usage
 Just import the functions you want to use:
 
-```
+```js
 import {uncons} from 'carrying'
 import {range} from 'carrying'
 
