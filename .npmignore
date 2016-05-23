@@ -1,0 +1,10 @@
+.tmp/
+dist/
+src/
+test/
+docs/
+tools/
+node_modules/
+typings/**/*
+tsconfig.json
+npm-debug.log
