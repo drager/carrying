@@ -16,6 +16,7 @@
   "scripts": {
     "postinstall": "npm-run-all postinstall:*",
     "postinstall:tsdm": "tsdm rewire",
+    "postinstall:cp-tsconfig": "cp tsconfig.base.json tsconfig.json",
     "postinstall:tsconfig": "tsconfig -i 2",
     "lint": "npm run lint:typescript",
     "lint:typescript": "tslint -c tslint.json `find src -name '*.ts'`",

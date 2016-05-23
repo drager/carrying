@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es6",
+    "module": "es6",
+    "outDir": "lib",
+    "moduleResolution": "node",
+    "allowJs": true
+  },
+  "filesGlob": [
+    "*.ts",
+    "src/**/*.ts",
+    "typings/**/*.ts"
+  ],
+  "files": [
+  ],
+  "formatCodeOptions": {
+    "indentSize": 2,
+    "tabSize": 2,
+    "newLineCharacter": "\n",
+    "convertTabsToSpaces": true,
+    "insertSpaceAfterCommaDelimiter": true,
+    "insertSpaceAfterSemicolonInForStatements": true,
+    "insertSpaceBeforeAndAfterBinaryOperators": true,
+    "insertSpaceAfterKeywordsInControlFlowStatements": true,
+    "insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+    "placeOpenBraceOnNewLineForFunctions": false,
+    "placeOpenBraceOnNewLineForControlBlocks": false
+  },
+  "compileOnSave": false,
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}
