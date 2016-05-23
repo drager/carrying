@@ -1,4 +1,6 @@
 # Carrying
+[![Build Status](https://travis-ci.org/drager/carrying.svg?branch=master)](https://travis-ci.org/drager/carrying)
+
 Functions that carries you towards happier and better code.
 
 ## Why?
