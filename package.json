@@ -1,6 +1,6 @@
 {
   "name": "carrying",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A library with functional functions that carries you towards happier and better code.",
   "keywords": [
     "functional functions",
@@ -12,7 +12,7 @@
     "curry",
     "currying"
   ],
-  "main": "dist/carrying.js",
+  "main": "lib/index.js",
   "scripts": {
     "prepublish": "npm-run-all prepublish:*",
     "prepublish:mkdir-tmp": "mkdir -p .tmp",
