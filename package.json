@@ -2,7 +2,17 @@
   "name": "carrying",
   "version": "0.0.1",
   "description": "A library with functional functions that carries you towards happier and better code.",
-  "main": "index.js",
+  "keywords": [
+    "functional functions",
+    "functional",
+    "range",
+    "zip",
+    "foldl",
+    "scan",
+    "curry",
+    "currying"
+  ],
+  "main": "dist/carrying.js",
   "scripts": {
     "postinstall": "npm-run-all postinstall:*",
     "postinstall:tsdm": "tsdm rewire",
@@ -26,6 +36,7 @@
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-stage-2": "^6.5.0",
     "chai": "^3.5.0",
+    "esdoc": "^0.4.7",
     "mocha": "^2.4.5",
     "mocha-loader": "^0.7.1",
     "mock-functions": "^0.1.1",
@@ -42,8 +53,5 @@
     "tslint": "^3.8.1",
     "typescript": "^1.9.0-dev.20160428-1.0",
     "webpack": "^1.13.0"
-  },
-  "dependencies": {
-    "esdoc": "^0.4.7"
   }
 }
