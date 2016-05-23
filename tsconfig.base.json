@@ -5,14 +5,14 @@
     "emitDecoratorMetadata": true,
     "target": "es6",
     "module": "es6",
-    "outDir": "lib",
+    "outDir": ".tmp",
     "moduleResolution": "node",
     "allowJs": true
   },
   "filesGlob": [
     "*.ts",
     "src/**/*.ts",
-    "typings/**/*.ts"
+    "typings/**/!tsd*.ts"
   ],
   "files": [
   ],
