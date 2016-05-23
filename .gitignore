@@ -10,6 +10,7 @@
 .tmp/
 dist/
 tsconfig.json
+lib/
 
 # node.js
 node_modules/
