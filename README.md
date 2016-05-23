@@ -11,3 +11,28 @@ functional JavaScript library which provides some useful functions that JavaScri
 ```
 npm install --save carrying
 ```
+
+## Usage
+Just import the functions you want to use:
+
+```
+import {uncons} from 'carrying'
+import {range} from 'carrying'
+
+uncons(range(1, 11)) // => 1
+uncons([1, 2, 3]) //=> 1
+uncons([]) //=> undefined
+
+uncons('abc') //=> 'c'
+uncons('ze') // => 'z'
+uncons('q') // => 'q'
+uncons('') //=> undefined
+
+range(1, 3) // => [1, 2]
+range(5, 11) // => [5, 6, 7, 8, 9, 10]
+
+range(10, 9) // => []
+range(2, 2) // => []
+
+range(1, 10, 2) // => [1, 3, 5, 7, 9]
+```
