@@ -36,3 +36,7 @@ range(2, 2) // => []
 
 range(1, 10, 2) // => [1, 3, 5, 7, 9]
 ```
+
+## Documentation
+Documentation is available in the [gh-pages](https://github.com/drager/carrying/tree/gh-pages)
+branch and online at: http://drager.github.io/carrying/
