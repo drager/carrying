@@ -37,6 +37,7 @@
     "babel-preset-stage-2": "^6.5.0",
     "chai": "^3.5.0",
     "esdoc": "^0.4.7",
+    "esdoc-es7-plugin": "0.0.3",
     "mocha": "^2.4.5",
     "mocha-loader": "^0.7.1",
     "mock-functions": "^0.1.1",
