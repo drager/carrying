@@ -1,6 +1,6 @@
 {
   "name": "carrying",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A library with functional functions that carries you towards happier and better code.",
   "keywords": [
     "functional functions",
@@ -19,7 +19,8 @@
     "prepublish:tsdm": "tsdm rewire",
     "prepublish:cp-tsconfig": "cp tsconfig.base.json tsconfig.json",
     "prepublish:tsconfig": "tsconfig -i 2",
-    "prepublish:build": "npm run build",
+    "prepublish:typescript": "tsc",
+    "prepublish:babel": "babel --out-dir lib .tmp --presets es2015",
     "lint": "npm run lint:typescript",
     "lint:typescript": "tslint -c tslint.json `find src -name '*.ts'`",
     "build": "rm -rf dist && webpack",
