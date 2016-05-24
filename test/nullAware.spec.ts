@@ -16,8 +16,8 @@ describe('nullAware', () => {
   })
 
   it('should return handle more types than strings', () => {
-    expect(nullAware(null, {name: 'Aware'}), {name: 'Aware'} as any)
-    expect(nullAware(null, 50), 50 as any)
-    expect(nullAware(null, [1, 5, 10]), [1, 5, 10] as any)
+    expect(nullAware(null, {name: 'Aware'}), {name: 'Aware'})
+    expect(nullAware(null, 50), 50)
+    expect(nullAware(null, [1, 5, 10]), [1, 5, 10])
   })
 })
