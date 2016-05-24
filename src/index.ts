@@ -10,6 +10,8 @@ export {foldl} from './foldl'
 
 // Array functions
 export {head} from './head'
+export {init} from './init'
+export {intersperse} from './intersperse'
 export {last} from './last'
 export {tail} from './tail'
 export {uncons} from './uncons'
