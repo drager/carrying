@@ -9,7 +9,8 @@
  * @example
  *   intersperse(',', 'abcde')) // => 'a,b,c,d,e'
  *
- *   intersperse(' ', ['intersperse', 'is', 'a', 'fun', 'function', '!']) // => ['intersperse', ' ', 'is', ' ', 'a', ' ',  'fun', ' ',  'function', ' ',  '!']
+ *   intersperse(' ', ['intersperse', 'is', 'a', 'fun', 'function', '!']) // =>
+ *     ['intersperse', ' ', 'is', ' ', 'a', ' ',  'fun', ' ',  'function', ' ',  '!']
  */
 export function intersperse(element: any, list: any[]|string): any {
   if (list.length === 0) return undefined
