@@ -21,13 +21,13 @@ Just import the functions you want to use:
 import {uncons} from 'carrying'
 import {range} from 'carrying'
 
-uncons(range(1, 11)) // => 1
-uncons([1, 2, 3]) //=> 1
+uncons(range(1, 11)) // => [[1], [2, 3, 4, 5, 6, 7, 8, 9, 10]]
+uncons([1, 2, 3]) //=> [[1], [2, 3]]
 uncons([]) //=> undefined
 
-uncons('abc') //=> 'c'
-uncons('ze') // => 'z'
-uncons('q') // => 'q'
+uncons('abc') //=> [['a'], ['b', 'c']]
+uncons('ze') // => [['z'], ['e']]
+uncons('q') // => ['q']
 uncons('') //=> undefined
 
 range(1, 3) // => [1, 2]

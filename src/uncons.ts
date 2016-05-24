@@ -8,13 +8,13 @@ import {tail} from './tail'
  * @param {Array|String} list
  * @return {Array}
  * @example
- *   uncons(range(1, 11)) // => 1
- *   uncons([1, 2, 3]) //=> 1
+ *   uncons(range(1, 11)) // => [[1], [2, 3, 4, 5, 6, 7, 8, 9, 10]]
+ *   uncons([1, 2, 3]) //=> [[1], [2, 3]]
  *   uncons([]) //=> undefined
  *
- *   uncons('abc') //=> 'c'
- *   uncons('ze') // => 'z'
- *   uncons('q') // => 'q'
+ *   uncons('abc') //=> [['a'], ['b', 'c']]
+ *   uncons('ze') // => [['z'], ['e']]
+ *   uncons('q') // => ['q']
  *   uncons('') //=> undefined
  */
 export function uncons(list: any[]|string): any {
