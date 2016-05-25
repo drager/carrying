@@ -17,10 +17,8 @@ export function transpose(list: any[]): any {
     l.reduce((obj, current, index) => {
       if (!(index in indices)) {
         indices[index] = []
-        indices[index].push(current)
-      } else {
-        indices[index].push(current)
       }
+      indices[index].push(current)
       return obj
     }, [])
   )
