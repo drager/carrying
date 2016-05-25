@@ -2,9 +2,6 @@
   "title": "Carrying",
   "source": "./lib",
   "destination": "./docs",
-  "plugins": [
-    {"name": "esdoc-es7-plugin"}
-  ],
   "test": {
     "type": "mocha",
     "source": "./test",

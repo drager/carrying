@@ -1,7 +1,7 @@
 # Carrying
 [![Build Status](https://travis-ci.org/drager/carrying.svg?branch=master)](https://travis-ci.org/drager/carrying)
 
-Functions that carries you towards happier and better code.
+A functional JavaScript library that carries you towards happier and better code.
 
 ## Why?
 Because JavaScript (as is at the moment) lacks some great functions built into the language.

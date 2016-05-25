@@ -1,7 +1,7 @@
 {
   "name": "carrying",
-  "version": "0.0.7",
-  "description": "A library with functional functions that carries you towards happier and better code.",
+  "version": "0.0.8",
+  "description": "A functional JavaScript library that carries you towards happier and better code.",
   "keywords": [
     "functional functions",
     "functional",
