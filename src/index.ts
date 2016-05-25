@@ -4,6 +4,8 @@ export {compose} from './compose'
 export {curry} from './curry'
 export {curryN} from './curryN'
 
+export {concat} from './concat'
+
 export {flip} from './flip'
 
 export {foldl} from './foldl'
