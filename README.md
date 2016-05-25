@@ -18,7 +18,7 @@ npm install --save carrying
 Just import the functions you want to use:
 
 ```js
-import {concat, uncons, range, transpose} from 'carrying'
+import {concat, intersperse, uncons, range, transpose} from 'carrying'
 
 uncons(range(1, 11)) // => [[1], [2, 3, 4, 5, 6, 7, 8, 9, 10]]
 uncons([1, 2, 3]) //=> [[1], [2, 3]]
