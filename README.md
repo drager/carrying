@@ -18,8 +18,7 @@ npm install --save carrying
 Just import the functions you want to use:
 
 ```js
-import {uncons} from 'carrying'
-import {range} from 'carrying'
+import {uncons, range, transpose} from 'carrying'
 
 uncons(range(1, 11)) // => [[1], [2, 3, 4, 5, 6, 7, 8, 9, 10]]
 uncons([1, 2, 3]) //=> [[1], [2, 3]]
@@ -37,8 +36,10 @@ range(10, 9) // => []
 range(2, 2) // => []
 
 range(1, 10, 2) // => [1, 3, 5, 7, 9]
+
+transpose([[1, 2, 3], [4, 5, 6]]) // => [[1, 4], [2, 5], [3, 6]]
+transpose([[10, 11], [20], [], [30, 31, 32]]) // => [[10, 20, 30], [11, 31], [32]]
 ```
 
 ## Documentation
-Documentation is available in the [gh-pages](https://github.com/drager/carrying/tree/gh-pages)
-branch and online at: http://drager.github.io/carrying/
+Documentation is available online at: http://drager.github.io/carrying/

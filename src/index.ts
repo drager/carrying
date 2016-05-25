@@ -14,6 +14,7 @@ export {init} from './init'
 export {intersperse} from './intersperse'
 export {last} from './last'
 export {tail} from './tail'
+export {transpose} from './transpose'
 export {uncons} from './uncons'
 
 export {nullAware} from './nullAware'
