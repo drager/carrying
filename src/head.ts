@@ -9,7 +9,7 @@
  *   head([1, 2, 3]) //=> 1
  *   head([]) //=> undefined
  *
- *   head('abc') //=> 'c'
+ *   head('abc') //=> 'a'
  *   head('ze') // => 'z'
  *   head('q') // => 'q'
  *   head('') //=> undefined
