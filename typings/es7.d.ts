@@ -6,3 +6,7 @@ interface Object {
   values<T>(object: {[key: string]: T}): Array<T>
   values(object: Object): Array<any>
 }
+
+interface Array<T> {
+  includes<T>(Array: T[]): Boolean
+}

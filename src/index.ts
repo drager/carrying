@@ -29,5 +29,7 @@ export {range} from './range'
 
 export {sum} from './sum'
 
+export {takeWhile} from './takeWhile'
+
 // Zipping
 export {zip} from './zip'
