@@ -5,6 +5,7 @@ export {curry} from './curry'
 export {curryN} from './curryN'
 
 export {concat} from './concat'
+export {concatMap} from './concatMap'
 
 export {flip} from './flip'
 
