@@ -11,6 +11,7 @@
 dist/
 tsconfig.json
 lib/
+docs/
 
 # node.js
 node_modules/
