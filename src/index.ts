@@ -19,6 +19,8 @@ export {last} from './last'
 export {maximum} from './maximum'
 export {minimum} from './minimum'
 export {product} from './product'
+export {sum} from './sum'
+export {splitAt} from './splitAt'
 export {tail} from './tail'
 export {transpose} from './transpose'
 export {uncons} from './uncons'
@@ -26,8 +28,6 @@ export {uncons} from './uncons'
 export {nullAware} from './nullAware'
 
 export {range} from './range'
-
-export {sum} from './sum'
 
 export {takeWhile} from './takeWhile'
 
