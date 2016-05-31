@@ -1,5 +1,4 @@
 import {expect} from 'chai'
-import {range} from '../src/range'
 import {transpose} from '../src/transpose'
 
 /** @test {transpose} */
