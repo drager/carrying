@@ -6,7 +6,6 @@
  * @param {Array} list - The list to go through
  * @return {Array}
  * @example
- *
  *   takeWhile(a => a < 3, [1, 2, 3, 4, 1, 2, 3, 4]) // => [1, 2]
  *   takeWhile(a => a < 9, [1, 2, 3]) // => [1, 2, 3]
  *   takeWhile(a => a < 0, [1, 2, 3]) // => []
