@@ -9,7 +9,7 @@ import {takeWhile} from './takeWhile'
  * @param {Array} list - The list to go through
  * @return {Array}
  * @example
- *   dropWhile(a => a < 3, [1, 2, 3, 4, 5, 1, 2, 3]) => [3, 4, 5, 1, 2, 3]
+ *   dropWhile(a => a < 3, [1, 2, 3, 4, 5, 1, 2, 3]) // => [3, 4, 5, 1, 2, 3]
  *   dropWhile(a => a < 9, [1, 2, 3]) // => []
  *   dropWhile(a => a < 0, [1, 2, 3]) // => [1, 2, 3]
  */
