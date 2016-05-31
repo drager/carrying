@@ -43,5 +43,12 @@ transpose([[10, 11], [20], [], [30, 31, 32]]) // => [[10, 20, 30], [11, 31], [32
 concat(intersperse(' ', ['intersperse', 'is', 'a', 'fun', 'function', '!'])) // => 'intersperse is a fun function !'
 ```
 
+Any carrying module can be imported individually if you prefer that:
+```js
+import {takeWhile} from 'carrying/lib/takeWhile'
+
+takeWhile(a => a < 3, [1, 2, 3, 4, 1, 2, 3, 4]) // => [1, 2]
+```
+
 ## Documentation
 Documentation is available online at: http://drager.github.io/carrying/
