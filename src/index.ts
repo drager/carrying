@@ -1,11 +1,13 @@
 export {compose} from './compose'
 
+export {concat} from './concat'
+export {concatMap} from './concatMap'
+
 // Currying
 export {curry} from './curry'
 export {curryN} from './curryN'
 
-export {concat} from './concat'
-export {concatMap} from './concatMap'
+export {dropWhile} from './dropWhile'
 
 export {flip} from './flip'
 
