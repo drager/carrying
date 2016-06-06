@@ -1,6 +1,6 @@
 {
   "name": "carrying",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A functional JavaScript library that carries you towards happier and better code.",
   "keywords": [
     "functional functions",
@@ -58,5 +58,13 @@
     "tslint": "^3.8.1",
     "typescript": "^1.9.0-dev.20160428-1.0",
     "webpack": "^1.13.0"
+  },
+  "homepage": "https://github.com/drager/carrying#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drager/carrying.git"
+  },
+  "bugs": {
+    "url": "https://github.com/drager/carrying/issues"
   }
 }
