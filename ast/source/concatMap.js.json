@@ -1,0 +1,982 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "Literal",
+        "value": "use strict",
+        "raw": "\"use strict\"",
+        "range": [
+          0,
+          12
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 12
+          }
+        }
+      },
+      "range": [
+        0,
+        13
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "Object",
+            "range": [
+              15,
+              21
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 0
+              },
+              "end": {
+                "line": 3,
+                "column": 6
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "defineProperty",
+            "range": [
+              22,
+              36
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 7
+              },
+              "end": {
+                "line": 3,
+                "column": 21
+              }
+            }
+          },
+          "range": [
+            15,
+            36
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 3,
+              "column": 21
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "exports",
+            "range": [
+              37,
+              44
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 22
+              },
+              "end": {
+                "line": 3,
+                "column": 29
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "__esModule",
+            "raw": "\"__esModule\"",
+            "range": [
+              46,
+              58
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 31
+              },
+              "end": {
+                "line": 3,
+                "column": 43
+              }
+            }
+          },
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "value",
+                  "range": [
+                    64,
+                    69
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 7
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": true,
+                  "raw": "true",
+                  "range": [
+                    71,
+                    75
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 13
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  64,
+                  75
+                ],
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 13
+                  }
+                }
+              }
+            ],
+            "range": [
+              60,
+              77
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 45
+              },
+              "end": {
+                "line": 5,
+                "column": 1
+              }
+            }
+          }
+        ],
+        "range": [
+          15,
+          78
+        ],
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 0
+          },
+          "end": {
+            "line": 5,
+            "column": 2
+          }
+        }
+      },
+      "range": [
+        15,
+        79
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "exports",
+            "range": [
+              80,
+              87
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 6,
+                "column": 7
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "concatMap",
+            "range": [
+              88,
+              97
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 8
+              },
+              "end": {
+                "line": 6,
+                "column": 17
+              }
+            }
+          },
+          "range": [
+            80,
+            97
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 6,
+              "column": 17
+            }
+          }
+        },
+        "right": {
+          "type": "Identifier",
+          "name": "concatMap",
+          "range": [
+            100,
+            109
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 20
+            },
+            "end": {
+              "line": 6,
+              "column": 29
+            }
+          }
+        },
+        "range": [
+          80,
+          109
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 29
+          }
+        }
+      },
+      "range": [
+        80,
+        110
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 30
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Map a function over the concatenation of all the elements of a list.\n *\n * @since v0.1.0\n * @param {Function} fn - The function to be mapped\n * @param {Array} list - The list to concatenate\n * @return {Array}\n * @example\n *   concatMap(a => a * 2, [[4, 5, 6], [1, 2, 3]]) // => [8, 10, 12, 2, 4, 6]\n ",
+          "range": [
+            111,
+            420
+          ],
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 0
+            },
+            "end": {
+              "line": 16,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "concatMap",
+        "range": [
+          430,
+          439
+        ],
+        "loc": {
+          "start": {
+            "line": 17,
+            "column": 9
+          },
+          "end": {
+            "line": 17,
+            "column": 18
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "fn",
+          "range": [
+            440,
+            442
+          ],
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 19
+            },
+            "end": {
+              "line": 17,
+              "column": 21
+            }
+          }
+        },
+        {
+          "type": "Identifier",
+          "name": "list",
+          "range": [
+            444,
+            448
+          ],
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 23
+            },
+            "end": {
+              "line": 17,
+              "column": 27
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ReturnStatement",
+            "argument": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "list",
+                      "range": [
+                        461,
+                        465
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 9
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 13
+                        }
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "reduce",
+                      "range": [
+                        466,
+                        472
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 14
+                        },
+                        "end": {
+                          "line": 18,
+                          "column": 20
+                        }
+                      }
+                    },
+                    "range": [
+                      461,
+                      472
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 18,
+                        "column": 9
+                      },
+                      "end": {
+                        "line": 18,
+                        "column": 20
+                      }
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "FunctionExpression",
+                      "id": null,
+                      "params": [
+                        {
+                          "type": "Identifier",
+                          "name": "a",
+                          "range": [
+                            483,
+                            484
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 18,
+                              "column": 31
+                            },
+                            "end": {
+                              "line": 18,
+                              "column": 32
+                            }
+                          }
+                        },
+                        {
+                          "type": "Identifier",
+                          "name": "b",
+                          "range": [
+                            486,
+                            487
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 18,
+                              "column": 34
+                            },
+                            "end": {
+                              "line": 18,
+                              "column": 35
+                            }
+                          }
+                        }
+                      ],
+                      "body": {
+                        "type": "BlockStatement",
+                        "body": [
+                          {
+                            "type": "ReturnStatement",
+                            "argument": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "a",
+                                  "range": [
+                                    502,
+                                    503
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 19,
+                                      "column": 11
+                                    },
+                                    "end": {
+                                      "line": 19,
+                                      "column": 12
+                                    }
+                                  }
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "concat",
+                                  "range": [
+                                    504,
+                                    510
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 19,
+                                      "column": 13
+                                    },
+                                    "end": {
+                                      "line": 19,
+                                      "column": 19
+                                    }
+                                  }
+                                },
+                                "range": [
+                                  502,
+                                  510
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 19,
+                                    "column": 11
+                                  },
+                                  "end": {
+                                    "line": 19,
+                                    "column": 19
+                                  }
+                                }
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Identifier",
+                                  "name": "b",
+                                  "range": [
+                                    511,
+                                    512
+                                  ],
+                                  "loc": {
+                                    "start": {
+                                      "line": 19,
+                                      "column": 20
+                                    },
+                                    "end": {
+                                      "line": 19,
+                                      "column": 21
+                                    }
+                                  }
+                                }
+                              ],
+                              "range": [
+                                502,
+                                513
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 19,
+                                  "column": 11
+                                },
+                                "end": {
+                                  "line": 19,
+                                  "column": 22
+                                }
+                              }
+                            },
+                            "range": [
+                              495,
+                              514
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 19,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 19,
+                                "column": 23
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          489,
+                          518
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 18,
+                            "column": 37
+                          },
+                          "end": {
+                            "line": 20,
+                            "column": 3
+                          }
+                        }
+                      },
+                      "generator": false,
+                      "expression": false,
+                      "range": [
+                        473,
+                        518
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 18,
+                          "column": 21
+                        },
+                        "end": {
+                          "line": 20,
+                          "column": 3
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    461,
+                    519
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 18,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 20,
+                      "column": 4
+                    }
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "map",
+                  "range": [
+                    520,
+                    523
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 20,
+                      "column": 5
+                    },
+                    "end": {
+                      "line": 20,
+                      "column": 8
+                    }
+                  }
+                },
+                "range": [
+                  461,
+                  523
+                ],
+                "loc": {
+                  "start": {
+                    "line": 18,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 20,
+                    "column": 8
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "FunctionExpression",
+                  "id": null,
+                  "params": [
+                    {
+                      "type": "Identifier",
+                      "name": "l",
+                      "range": [
+                        534,
+                        535
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 20,
+                          "column": 19
+                        },
+                        "end": {
+                          "line": 20,
+                          "column": 20
+                        }
+                      }
+                    }
+                  ],
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "argument": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "Identifier",
+                            "name": "fn",
+                            "range": [
+                              550,
+                              552
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 21,
+                                "column": 11
+                              },
+                              "end": {
+                                "line": 21,
+                                "column": 13
+                              }
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "Identifier",
+                              "name": "l",
+                              "range": [
+                                553,
+                                554
+                              ],
+                              "loc": {
+                                "start": {
+                                  "line": 21,
+                                  "column": 14
+                                },
+                                "end": {
+                                  "line": 21,
+                                  "column": 15
+                                }
+                              }
+                            }
+                          ],
+                          "range": [
+                            550,
+                            555
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 21,
+                              "column": 11
+                            },
+                            "end": {
+                              "line": 21,
+                              "column": 16
+                            }
+                          }
+                        },
+                        "range": [
+                          543,
+                          556
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 21,
+                            "column": 4
+                          },
+                          "end": {
+                            "line": 21,
+                            "column": 17
+                          }
+                        }
+                      }
+                    ],
+                    "range": [
+                      537,
+                      560
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 20,
+                        "column": 22
+                      },
+                      "end": {
+                        "line": 22,
+                        "column": 3
+                      }
+                    }
+                  },
+                  "generator": false,
+                  "expression": false,
+                  "range": [
+                    524,
+                    560
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 20,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 22,
+                      "column": 3
+                    }
+                  }
+                }
+              ],
+              "range": [
+                461,
+                561
+              ],
+              "loc": {
+                "start": {
+                  "line": 18,
+                  "column": 9
+                },
+                "end": {
+                  "line": 22,
+                  "column": 4
+                }
+              }
+            },
+            "range": [
+              454,
+              562
+            ],
+            "loc": {
+              "start": {
+                "line": 18,
+                "column": 2
+              },
+              "end": {
+                "line": 22,
+                "column": 5
+              }
+            }
+          }
+        ],
+        "range": [
+          450,
+          564
+        ],
+        "loc": {
+          "start": {
+            "line": 17,
+            "column": 29
+          },
+          "end": {
+            "line": 23,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        421,
+        564
+      ],
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Map a function over the concatenation of all the elements of a list.\n *\n * @since v0.1.0\n * @param {Function} fn - The function to be mapped\n * @param {Array} list - The list to concatenate\n * @return {Array}\n * @example\n *   concatMap(a => a * 2, [[4, 5, 6], [1, 2, 3]]) // => [8, 10, 12, 2, 4, 6]\n ",
+          "range": [
+            111,
+            420
+          ],
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 0
+            },
+            "end": {
+              "line": 16,
+              "column": 3
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    564
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 23,
+      "column": 1
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * Map a function over the concatenation of all the elements of a list.\n *\n * @since v0.1.0\n * @param {Function} fn - The function to be mapped\n * @param {Array} list - The list to concatenate\n * @return {Array}\n * @example\n *   concatMap(a => a * 2, [[4, 5, 6], [1, 2, 3]]) // => [8, 10, 12, 2, 4, 6]\n ",
+      "range": [
+        111,
+        420
+      ],
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 3
+        }
+      }
+    }
+  ]
+}

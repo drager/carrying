@@ -1,0 +1,4575 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/compose.js",
+    "memberof": null,
+    "longname": "lib/compose.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.compose = compose;\n/**\n * Performs right-to-left function composition.\n *\n * @since v0.1.0\n * @param {any} ...args\n * @return {Function}\n * @example\n *   const f = compose(a => a + 1, a => -a, Math.pow)\n *   f(3, 4) //=> -80\n */\nfunction compose() {\n  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {\n    args[_key] = arguments[_key];\n  }\n\n  return args.reduce(function (result, fn) {\n    return function () {\n      return result(fn.apply(undefined, arguments));\n    };\n  });\n}"
+  },
+  {
+    "__docId__": 1,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "compose",
+    "memberof": "lib/compose.js",
+    "longname": "lib/compose.js~compose",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/compose.js",
+    "importStyle": null,
+    "description": "Performs right-to-left function composition.",
+    "examples": [
+      "  const f = compose(a => a + 1, a => -a, Math.pow)\n  f(3, 4) //=> -80"
+    ],
+    "lineNumber": 17,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "...args",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Function"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 2,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/concat.js",
+    "memberof": null,
+    "longname": "lib/concat.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.concat = concat;\n/**\n * The concatenation of all the elements of a list.\n *\n * @since v0.1.0\n * @param {Array} list\n * @return {Array}\n * @example\n *   concat([[4, 5, 6], [1, 2, 3]]) // => [4, 5, 6, 1, 2, 3]\n *\n *   concat(intersperse(' ', ['intersperse', 'is', 'a', 'fun', 'function', '!']))) // =>\n *     'intersperse is a fun function !'\n */\nfunction concat(list) {\n  return list.reduce(function (a, b) {\n    return a.concat(b);\n  });\n}"
+  },
+  {
+    "__docId__": 3,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "concat",
+    "memberof": "lib/concat.js",
+    "longname": "lib/concat.js~concat",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/concat.js",
+    "importStyle": null,
+    "description": "The concatenation of all the elements of a list.",
+    "examples": [
+      "  concat([[4, 5, 6], [1, 2, 3]]) // => [4, 5, 6, 1, 2, 3]\n\n  concat(intersperse(' ', ['intersperse', 'is', 'a', 'fun', 'function', '!']))) // =>\n    'intersperse is a fun function !'"
+    ],
+    "lineNumber": 19,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 4,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/concatMap.js",
+    "memberof": null,
+    "longname": "lib/concatMap.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.concatMap = concatMap;\n/**\n * Map a function over the concatenation of all the elements of a list.\n *\n * @since v0.1.0\n * @param {Function} fn - The function to be mapped\n * @param {Array} list - The list to concatenate\n * @return {Array}\n * @example\n *   concatMap(a => a * 2, [[4, 5, 6], [1, 2, 3]]) // => [8, 10, 12, 2, 4, 6]\n */\nfunction concatMap(fn, list) {\n  return list.reduce(function (a, b) {\n    return a.concat(b);\n  }).map(function (l) {\n    return fn(l);\n  });\n}"
+  },
+  {
+    "__docId__": 5,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "concatMap",
+    "memberof": "lib/concatMap.js",
+    "longname": "lib/concatMap.js~concatMap",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/concatMap.js",
+    "importStyle": null,
+    "description": "Map a function over the concatenation of all the elements of a list.",
+    "examples": [
+      "  concatMap(a => a * 2, [[4, 5, 6], [1, 2, 3]]) // => [8, 10, 12, 2, 4, 6]"
+    ],
+    "lineNumber": 17,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fn",
+        "description": "The function to be mapped"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The list to concatenate"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 6,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/curry.js",
+    "memberof": null,
+    "longname": "lib/curry.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.curry = curry;\n\nvar _curryN = require('./curryN');\n\n/**\n * Returns a curried variant of the provided function.\n *\n * @since v0.1.0\n * @param {Function} fn - The function to be curried\n * @return {Function} The curried function\n * @example\n *   const greeter = (greeting, name) => `${greeting} ${name}`\n *   const curriedGreeter = curry(greeter)\n *   const helloGreeting = curriedGreeter('Hello')\n *   helloGreeting('Buzz') // => 'Hello Buzz'\n *\n *   const add = (a, b) => a + b\n *   const curriedAdd = curry(add)\n *   const addThree = curriedAdd(3)\n *   addThree(50) // => 53\n */\nfunction curry(fn) {\n  return (0, _curryN.curryN)(fn.length)(fn);\n}"
+  },
+  {
+    "__docId__": 7,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_curryN",
+    "memberof": "lib/curry.js",
+    "longname": "lib/curry.js~_curryN",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/curry.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "curry",
+    "memberof": "lib/curry.js",
+    "longname": "lib/curry.js~curry",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/curry.js",
+    "importStyle": null,
+    "description": "Returns a curried variant of the provided function.",
+    "examples": [
+      "  const greeter = (greeting, name) => `${greeting} ${name}`\n  const curriedGreeter = curry(greeter)\n  const helloGreeting = curriedGreeter('Hello')\n  helloGreeting('Buzz') // => 'Hello Buzz'\n\n  const add = (a, b) => a + b\n  const curriedAdd = curry(add)\n  const addThree = curriedAdd(3)\n  addThree(50) // => 53"
+    ],
+    "lineNumber": 27,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fn",
+        "description": "The function to be curried"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Function"
+      ],
+      "spread": false,
+      "description": "The curried function"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 9,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/curryN.js",
+    "memberof": null,
+    "longname": "lib/curryN.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar curryN = exports.curryN = function curryN(n) {\n    return function (fn) {\n        for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\n            args[_key - 1] = arguments[_key];\n        }\n\n        return function curried() {\n            var _this = this;\n\n            for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {\n                args[_key2] = arguments[_key2];\n            }\n\n            return args.length >= fn.length ? fn.call.apply(fn, [this].concat(args)) : function () {\n                for (var _len3 = arguments.length, rest = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {\n                    rest[_key3] = arguments[_key3];\n                }\n\n                return curried.call.apply(curried, [_this].concat(args, rest));\n            };\n        };\n    };\n};"
+  },
+  {
+    "__docId__": 10,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "curryN",
+    "memberof": "lib/curryN.js",
+    "longname": "lib/curryN.js~curryN",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/curryN.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/dropWhile.js",
+    "memberof": null,
+    "longname": "lib/dropWhile.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.dropWhile = dropWhile;\n\nvar _takeWhile = require('./takeWhile');\n\n/**\n * Returns the suffix remaining after `takeWhile`.\n * @see takeWhile\n *\n * @since v0.1.0\n * @param {Function} fn - The predicate function\n * @param {Array} list - The list to go through\n * @return {Array}\n * @example\n *   dropWhile(a => a < 3, [1, 2, 3, 4, 5, 1, 2, 3]) // => [3, 4, 5, 1, 2, 3]\n *   dropWhile(a => a < 9, [1, 2, 3]) // => []\n *   dropWhile(a => a < 0, [1, 2, 3]) // => [1, 2, 3]\n */\nfunction dropWhile(fn, list) {\n  return list.filter(function (element, index) {\n    return (0, _takeWhile.takeWhile)(fn, list)[index] !== list[index];\n  });\n}"
+  },
+  {
+    "__docId__": 12,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_takeWhile",
+    "memberof": "lib/dropWhile.js",
+    "longname": "lib/dropWhile.js~_takeWhile",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/dropWhile.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "dropWhile",
+    "memberof": "lib/dropWhile.js",
+    "longname": "lib/dropWhile.js~dropWhile",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/dropWhile.js",
+    "importStyle": null,
+    "description": "Returns the suffix remaining after `takeWhile`.",
+    "examples": [
+      "  dropWhile(a => a < 3, [1, 2, 3, 4, 5, 1, 2, 3]) // => [3, 4, 5, 1, 2, 3]\n  dropWhile(a => a < 9, [1, 2, 3]) // => []\n  dropWhile(a => a < 0, [1, 2, 3]) // => [1, 2, 3]"
+    ],
+    "see": [
+      "takeWhile"
+    ],
+    "lineNumber": 23,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fn",
+        "description": "The predicate function"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The list to go through"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 14,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/flip.js",
+    "memberof": null,
+    "longname": "lib/flip.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.flip = flip;\n/**\n * Returns a function that is like the original function,\n * only the first two arguments are flipped.\n *\n * @since v0.1.0\n * @param {Function} fn\n * @return {Function}\n * @example\n *   const merge = (a, b) => [].concat(a, b)\n *   flip(merge)(1, 2) // => [2, 1]\n */\nfunction flip(fn) {\n  return function (y, x) {\n    for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {\n      args[_key - 2] = arguments[_key];\n    }\n\n    return fn(x, y, args);\n  };\n}"
+  },
+  {
+    "__docId__": 15,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "flip",
+    "memberof": "lib/flip.js",
+    "longname": "lib/flip.js~flip",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/flip.js",
+    "importStyle": null,
+    "description": "Returns a function that is like the original function,\nonly the first two arguments are flipped.",
+    "examples": [
+      "  const merge = (a, b) => [].concat(a, b)\n  flip(merge)(1, 2) // => [2, 1]"
+    ],
+    "lineNumber": 18,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fn",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Function"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 16,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/foldl.js",
+    "memberof": null,
+    "longname": "lib/foldl.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.foldl = foldl;\n\nvar _head = require('./head');\n\n/**\n * Applies a function against an accumulator and each value of the list from left-to-right\n * to reduce it to a single value. (also known variously as reduce).\n *\n * @since v0.1.0\n * @param {Function} fn - The accumlating function, the function to\n * execute on each value in the array\n * @param {Array} list - The list we should accumlate\n * @param {any} accumlator -\n * @param {number} index -\n * @return {any}\n * @example\n *   const add = (prev, current) => prev + current\n *   foldl(add)([1, 2, 3]) // => 6\n */\nfunction foldl(fn) {\n    return function (list) {\n        var accumulator = arguments.length <= 1 || arguments[1] === undefined ? (0, _head.head)(list) : arguments[1];\n        var index = arguments.length <= 2 || arguments[2] === undefined ? 0 : arguments[2];\n\n        var result = void 0;\n        if (index === list.length - 1) {\n            result = accumulator;\n        } else {\n            accumulator = fn(accumulator, list[index + 1]);\n            result = foldl(fn)(list, accumulator, index + 1);\n        }\n        return result;\n    };\n}"
+  },
+  {
+    "__docId__": 17,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_head",
+    "memberof": "lib/foldl.js",
+    "longname": "lib/foldl.js~_head",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/foldl.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 18,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "foldl",
+    "memberof": "lib/foldl.js",
+    "longname": "lib/foldl.js~foldl",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/foldl.js",
+    "importStyle": null,
+    "description": "Applies a function against an accumulator and each value of the list from left-to-right\nto reduce it to a single value. (also known variously as reduce).",
+    "examples": [
+      "  const add = (prev, current) => prev + current\n  foldl(add)([1, 2, 3]) // => 6"
+    ],
+    "lineNumber": 25,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fn",
+        "description": "The accumlating function, the function to\nexecute on each value in the array"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The list we should accumlate"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "accumlator",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "any"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 19,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/head.js",
+    "memberof": null,
+    "longname": "lib/head.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.head = head;\n/**\n * Returns the first element of the given list or string.\n *\n * @since v0.1.0\n * @param {Array|String} list\n * @return {any}\n * @example\n *   head(range(1, 11)) // => 1\n *   head([1, 2, 3]) //=> 1\n *   head([]) //=> undefined\n *\n *   head('abc') //=> 'a'\n *   head('ze') // => 'z'\n *   head('q') // => 'q'\n *   head('') //=> undefined\n */\nfunction head(list) {\n  return list[0];\n}"
+  },
+  {
+    "__docId__": 20,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "head",
+    "memberof": "lib/head.js",
+    "longname": "lib/head.js~head",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/head.js",
+    "importStyle": null,
+    "description": "Returns the first element of the given list or string.",
+    "examples": [
+      "  head(range(1, 11)) // => 1\n  head([1, 2, 3]) //=> 1\n  head([]) //=> undefined\n\n  head('abc') //=> 'a'\n  head('ze') // => 'z'\n  head('q') // => 'q'\n  head('') //=> undefined"
+    ],
+    "lineNumber": 23,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "any"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 21,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/helpers.js",
+    "memberof": null,
+    "longname": "lib/helpers.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.iterate = undefined;\n\nvar _curry = require('./curry');\n\nfunction _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }\n\n/**\n * Helper function that helps to iterate over an list\n * with a given start, stop and step.\n */\nvar iterate = exports.iterate = (0, _curry.curry)(function (start, stop, step, list) {\n    var newList = [].concat(_toConsumableArray(list));\n    for (var i = start; i < stop; i += step) {\n        newList.push(i);\n    }\n    return newList;\n});"
+  },
+  {
+    "__docId__": 22,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_curry",
+    "memberof": "lib/helpers.js",
+    "longname": "lib/helpers.js~_curry",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/helpers.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 23,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "_toConsumableArray",
+    "memberof": "lib/helpers.js",
+    "longname": "lib/helpers.js~_toConsumableArray",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/helpers.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "params": [
+      {
+        "name": "arr",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 24,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "iterate",
+    "memberof": "lib/helpers.js",
+    "longname": "lib/helpers.js~iterate",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/helpers.js",
+    "importStyle": null,
+    "description": "Helper function that helps to iterate over an list\nwith a given start, stop and step.",
+    "lineNumber": 16,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 25,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/index.js",
+    "memberof": null,
+    "longname": "lib/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _compose = require('./compose');\n\nObject.defineProperty(exports, 'compose', {\n  enumerable: true,\n  get: function get() {\n    return _compose.compose;\n  }\n});\n\nvar _concat = require('./concat');\n\nObject.defineProperty(exports, 'concat', {\n  enumerable: true,\n  get: function get() {\n    return _concat.concat;\n  }\n});\n\nvar _concatMap = require('./concatMap');\n\nObject.defineProperty(exports, 'concatMap', {\n  enumerable: true,\n  get: function get() {\n    return _concatMap.concatMap;\n  }\n});\n\nvar _curry = require('./curry');\n\nObject.defineProperty(exports, 'curry', {\n  enumerable: true,\n  get: function get() {\n    return _curry.curry;\n  }\n});\n\nvar _curryN = require('./curryN');\n\nObject.defineProperty(exports, 'curryN', {\n  enumerable: true,\n  get: function get() {\n    return _curryN.curryN;\n  }\n});\n\nvar _dropWhile = require('./dropWhile');\n\nObject.defineProperty(exports, 'dropWhile', {\n  enumerable: true,\n  get: function get() {\n    return _dropWhile.dropWhile;\n  }\n});\n\nvar _flip = require('./flip');\n\nObject.defineProperty(exports, 'flip', {\n  enumerable: true,\n  get: function get() {\n    return _flip.flip;\n  }\n});\n\nvar _foldl = require('./foldl');\n\nObject.defineProperty(exports, 'foldl', {\n  enumerable: true,\n  get: function get() {\n    return _foldl.foldl;\n  }\n});\n\nvar _head = require('./head');\n\nObject.defineProperty(exports, 'head', {\n  enumerable: true,\n  get: function get() {\n    return _head.head;\n  }\n});\n\nvar _init = require('./init');\n\nObject.defineProperty(exports, 'init', {\n  enumerable: true,\n  get: function get() {\n    return _init.init;\n  }\n});\n\nvar _intersperse = require('./intersperse');\n\nObject.defineProperty(exports, 'intersperse', {\n  enumerable: true,\n  get: function get() {\n    return _intersperse.intersperse;\n  }\n});\n\nvar _last = require('./last');\n\nObject.defineProperty(exports, 'last', {\n  enumerable: true,\n  get: function get() {\n    return _last.last;\n  }\n});\n\nvar _maximum = require('./maximum');\n\nObject.defineProperty(exports, 'maximum', {\n  enumerable: true,\n  get: function get() {\n    return _maximum.maximum;\n  }\n});\n\nvar _minimum = require('./minimum');\n\nObject.defineProperty(exports, 'minimum', {\n  enumerable: true,\n  get: function get() {\n    return _minimum.minimum;\n  }\n});\n\nvar _product = require('./product');\n\nObject.defineProperty(exports, 'product', {\n  enumerable: true,\n  get: function get() {\n    return _product.product;\n  }\n});\n\nvar _sum = require('./sum');\n\nObject.defineProperty(exports, 'sum', {\n  enumerable: true,\n  get: function get() {\n    return _sum.sum;\n  }\n});\n\nvar _splitAt = require('./splitAt');\n\nObject.defineProperty(exports, 'splitAt', {\n  enumerable: true,\n  get: function get() {\n    return _splitAt.splitAt;\n  }\n});\n\nvar _tail = require('./tail');\n\nObject.defineProperty(exports, 'tail', {\n  enumerable: true,\n  get: function get() {\n    return _tail.tail;\n  }\n});\n\nvar _transpose = require('./transpose');\n\nObject.defineProperty(exports, 'transpose', {\n  enumerable: true,\n  get: function get() {\n    return _transpose.transpose;\n  }\n});\n\nvar _uncons = require('./uncons');\n\nObject.defineProperty(exports, 'uncons', {\n  enumerable: true,\n  get: function get() {\n    return _uncons.uncons;\n  }\n});\n\nvar _nullAware = require('./nullAware');\n\nObject.defineProperty(exports, 'nullAware', {\n  enumerable: true,\n  get: function get() {\n    return _nullAware.nullAware;\n  }\n});\n\nvar _range = require('./range');\n\nObject.defineProperty(exports, 'range', {\n  enumerable: true,\n  get: function get() {\n    return _range.range;\n  }\n});\n\nvar _takeWhile = require('./takeWhile');\n\nObject.defineProperty(exports, 'takeWhile', {\n  enumerable: true,\n  get: function get() {\n    return _takeWhile.takeWhile;\n  }\n});\n\nvar _zip = require('./zip');\n\nObject.defineProperty(exports, 'zip', {\n  enumerable: true,\n  get: function get() {\n    return _zip.zip;\n  }\n});"
+  },
+  {
+    "__docId__": 26,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_compose",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_compose",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 27,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_concat",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_concat",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 28,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_concatMap",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_concatMap",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 29,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_curry",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_curry",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 30,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_curryN",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_curryN",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 31,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_dropWhile",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_dropWhile",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 52,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 32,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_flip",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_flip",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 61,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 33,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_foldl",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_foldl",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 70,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 34,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_head",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_head",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 79,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 35,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_init",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_init",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 88,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 36,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_intersperse",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_intersperse",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 97,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 37,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_last",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_last",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 106,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 38,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_maximum",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_maximum",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 115,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 39,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_minimum",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_minimum",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 124,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 40,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_product",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_product",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 133,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 41,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_sum",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_sum",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 142,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 42,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_splitAt",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_splitAt",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 151,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 43,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_tail",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_tail",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 160,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 44,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_transpose",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_transpose",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 169,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 45,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_uncons",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_uncons",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 178,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 46,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_nullAware",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_nullAware",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 187,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 47,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_range",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_range",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 196,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 48,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_takeWhile",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_takeWhile",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 205,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_zip",
+    "memberof": "lib/index.js",
+    "longname": "lib/index.js~_zip",
+    "access": null,
+    "export": false,
+    "importPath": "carrying",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 214,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/init.js",
+    "memberof": null,
+    "longname": "lib/init.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.init = init;\n\nfunction _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }\n\n/**\n * Returns all the elements of a list except the last one.\n *\n * @since v0.1.0\n * @param {Array} list - The array\n * @return {Array} - All elements except the last one.\n * @example\n *   init([1, 2, 3]) // => [1, 2]\n *   init([29, 10]) // => [29]\n *   init([300]) // => [300]\n *\n *   init('abc') //=> ['a', 'b']\n *   init('ze') // => ['z']\n *   init('q') // => ['q']\n *   init('') //=> undefined\n */\nfunction init(list) {\n    if (list.length === 0) return undefined;\n    var results = [];\n    list.length > 1 ? results.push.apply(results, _toConsumableArray(list.slice(0, -1))) : results.push.apply(results, _toConsumableArray(list));\n    return results;\n}"
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "_toConsumableArray",
+    "memberof": "lib/init.js",
+    "longname": "lib/init.js~_toConsumableArray",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/init.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "params": [
+      {
+        "name": "arr",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "init",
+    "memberof": "lib/init.js",
+    "longname": "lib/init.js~init",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/init.js",
+    "importStyle": null,
+    "description": "Returns all the elements of a list except the last one.",
+    "examples": [
+      "  init([1, 2, 3]) // => [1, 2]\n  init([29, 10]) // => [29]\n  init([300]) // => [300]\n\n  init('abc') //=> ['a', 'b']\n  init('ze') // => ['z']\n  init('q') // => ['q']\n  init('') //=> undefined"
+    ],
+    "lineNumber": 26,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The array"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": "All elements except the last one."
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 53,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/intersperse.js",
+    "memberof": null,
+    "longname": "lib/intersperse.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.intersperse = intersperse;\n/**\n * Takes an element and a list and intersperses that element\n * between the elements of the list\n *\n * @since v0.1.0\n * @param {any} element - The element to intersperse\n * @param {Array} list - The array\n * @return {Array} - An intersperses list\n * @example\n *   intersperse(',', 'abcde')) // => 'a,b,c,d,e'\n *\n *   intersperse(' ', ['intersperse', 'is', 'a', 'fun', 'function', '!']) // =>\n *     ['intersperse', ' ', 'is', ' ', 'a', ' ',  'fun', ' ',  'function', ' ',  '!']\n */\nfunction intersperse(element, list) {\n    if (list.length === 0) return undefined;\n    var results = void 0;\n    if (typeof list === 'string') {\n        results = '';\n        for (var i = 0; i < list.length; i++) {\n            results += i === list.length - 1 ? list[i] : '' + list[i] + element;\n        }\n    } else {\n        results = [];\n        for (var _i = 0; _i < list.length; _i++) {\n            _i === list.length - 1 ? results.push(list[_i]) : results.push(list[_i], element);\n        }\n    }\n    return results;\n}"
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "intersperse",
+    "memberof": "lib/intersperse.js",
+    "longname": "lib/intersperse.js~intersperse",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/intersperse.js",
+    "importStyle": null,
+    "description": "Takes an element and a list and intersperses that element\nbetween the elements of the list",
+    "examples": [
+      "  intersperse(',', 'abcde')) // => 'a,b,c,d,e'\n\n  intersperse(' ', ['intersperse', 'is', 'a', 'fun', 'function', '!']) // =>\n    ['intersperse', ' ', 'is', ' ', 'a', ' ',  'fun', ' ',  'function', ' ',  '!']"
+    ],
+    "lineNumber": 21,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "element",
+        "description": "The element to intersperse"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The array"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": "An intersperses list"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 55,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/last.js",
+    "memberof": null,
+    "longname": "lib/last.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.last = last;\n/**\n * Extract the last element of a list.\n *\n * @since v0.1.0\n * @param {Array} list - The array\n * @return {Array} - The last element of the list\n * @example\n *   last([1, 2, 3]) // => 3\n *   last([29, 10]) // => 10\n *   last([300]) // => 300\n *\n *   last('abc') //=> 'c'\n *   last('ze') // => 'e'\n *   last('q') // => 'q'\n *   last('') //=> undefined\n */\nfunction last(list) {\n  return list[list.length - 1];\n}"
+  },
+  {
+    "__docId__": 56,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "last",
+    "memberof": "lib/last.js",
+    "longname": "lib/last.js~last",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/last.js",
+    "importStyle": null,
+    "description": "Extract the last element of a list.",
+    "examples": [
+      "  last([1, 2, 3]) // => 3\n  last([29, 10]) // => 10\n  last([300]) // => 300\n\n  last('abc') //=> 'c'\n  last('ze') // => 'e'\n  last('q') // => 'q'\n  last('') //=> undefined"
+    ],
+    "lineNumber": 23,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The array"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": "The last element of the list"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 57,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/maximum.js",
+    "memberof": null,
+    "longname": "lib/maximum.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.maximum = maximum;\n/**\n * Returns the largest element.\n *\n * @since v0.1.0\n * @param {Array} list - The array of numbers\n * @return {Number} The largest number\n * @example\n *   maximum([1, 2, 3]) // => 3\n *   maximum([991, 10, 33]) // => 991\n *\n *   maximum([5, -10, 3]) // => 5\n */\nfunction maximum(list) {\n    var largest = void 0;\n    for (var i = 0; i < list.length; i += 1) {\n        if (typeof largest === 'undefined' || list[i] > largest) {\n            largest = list[i];\n        }\n    }\n    return largest;\n}"
+  },
+  {
+    "__docId__": 58,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "maximum",
+    "memberof": "lib/maximum.js",
+    "longname": "lib/maximum.js~maximum",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/maximum.js",
+    "importStyle": null,
+    "description": "Returns the largest element.",
+    "examples": [
+      "  maximum([1, 2, 3]) // => 3\n  maximum([991, 10, 33]) // => 991\n\n  maximum([5, -10, 3]) // => 5"
+    ],
+    "lineNumber": 19,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The array of numbers"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": "The largest number"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 59,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/minimum.js",
+    "memberof": null,
+    "longname": "lib/minimum.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.minimum = minimum;\n/**\n * Returns the lowest element.\n *\n * @since v0.1.0\n * @param {Array} list - The array of numbers\n * @return {Number} The lowest number\n * @example\n *   minimum([1, 2, 3]) // => 1\n *   minimum([991, 10, 33]) // => 10\n *\n *   minimum([5, -10, 3]) // => -10\n */\nfunction minimum(list) {\n    var lowest = void 0;\n    for (var i = 0; i < list.length; i += 1) {\n        if (typeof lowest === 'undefined' || list[i] < lowest) {\n            lowest = list[i];\n        }\n    }\n    return lowest;\n}"
+  },
+  {
+    "__docId__": 60,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "minimum",
+    "memberof": "lib/minimum.js",
+    "longname": "lib/minimum.js~minimum",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/minimum.js",
+    "importStyle": null,
+    "description": "Returns the lowest element.",
+    "examples": [
+      "  minimum([1, 2, 3]) // => 1\n  minimum([991, 10, 33]) // => 10\n\n  minimum([5, -10, 3]) // => -10"
+    ],
+    "lineNumber": 19,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The array of numbers"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": "The lowest number"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 61,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/nullAware.js",
+    "memberof": null,
+    "longname": "lib/nullAware.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.nullAware = nullAware;\n/**\n * Checks whenever a value is null or undefined and if it is, then it replaces\n * the null value it with a given replaceValue. If the value is not null\n * or undefined it will just return the supposed to be null value, that is the\n * first parameter.\n *\n * @since v0.1.0\n * @param {any} value - The value to be checked\n * @param {any} replaceValue - The value that should be returned if the first\n * param is null or undefined\n * @return {any} Either value or replaceValue\n * @example\n *   let x = null\n *   x = nullAware(x, 'are null-aware, friendly to') // => 'are null-aware, friendly to'\n */\nfunction nullAware(value, replaceValue) {\n  return value === null || typeof value === 'undefined' ? replaceValue : value;\n}"
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "nullAware",
+    "memberof": "lib/nullAware.js",
+    "longname": "lib/nullAware.js~nullAware",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/nullAware.js",
+    "importStyle": null,
+    "description": "Checks whenever a value is null or undefined and if it is, then it replaces\nthe null value it with a given replaceValue. If the value is not null\nor undefined it will just return the supposed to be null value, that is the\nfirst parameter.",
+    "examples": [
+      "  let x = null\n  x = nullAware(x, 'are null-aware, friendly to') // => 'are null-aware, friendly to'"
+    ],
+    "lineNumber": 22,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "replaceValue",
+        "description": "The value that should be returned if the first\nparam is null or undefined"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "any"
+      ],
+      "spread": false,
+      "description": "Either value or replaceValue"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 63,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/product.js",
+    "memberof": null,
+    "longname": "lib/product.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.product = product;\n/**\n * Returns the product of the numbers of a list.\n *\n * @since v0.1.0\n * @param {Array} list - The array of numbers\n * @return {Number} The product of the numbers\n * @example\n *   product([1, 2, 3]) // => 6\n *   product([991, 10, 33]) // => 327030\n *\n *   product([5, -10, 3]) // => -150\n */\nfunction product(list) {\n  return list.reduce(function (prev, curr) {\n    return prev * curr;\n  }, 1);\n}"
+  },
+  {
+    "__docId__": 64,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "product",
+    "memberof": "lib/product.js",
+    "longname": "lib/product.js~product",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/product.js",
+    "importStyle": null,
+    "description": "Returns the product of the numbers of a list.",
+    "examples": [
+      "  product([1, 2, 3]) // => 6\n  product([991, 10, 33]) // => 327030\n\n  product([5, -10, 3]) // => -150"
+    ],
+    "lineNumber": 19,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The array of numbers"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": "The product of the numbers"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 65,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/range.js",
+    "memberof": null,
+    "longname": "lib/range.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.range = range;\n\nvar _helpers = require('./helpers');\n\n/**\n * Produces an list in the given range.\n *\n * @since v0.1.0\n * @param {number} start - The start value for the range\n * @param {number} stop - The stop value for the range\n * @param {number} [step] - A optional step value\n * @return {Array} Either value or replaceValue\n * @example\n *   range(1, 3) // => [1, 2]\n *   range(5, 11) // => [5, 6, 7, 8, 9, 10]\n *\n *   range(10, 9) // => []\n *   range(2, 2) // => []\n *\n *   range(1, 10, 2) // => [1, 3, 5, 7, 9]\n */\nfunction range(start, stop, step) {\n  return step ? (0, _helpers.iterate)(start, stop, step)([]) : (0, _helpers.iterate)(start, stop, 1)([]);\n}"
+  },
+  {
+    "__docId__": 66,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_helpers",
+    "memberof": "lib/range.js",
+    "longname": "lib/range.js~_helpers",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/range.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "range",
+    "memberof": "lib/range.js",
+    "longname": "lib/range.js~range",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/range.js",
+    "importStyle": null,
+    "description": "Produces an list in the given range.",
+    "examples": [
+      "  range(1, 3) // => [1, 2]\n  range(5, 11) // => [5, 6, 7, 8, 9, 10]\n\n  range(10, 9) // => []\n  range(2, 2) // => []\n\n  range(1, 10, 2) // => [1, 3, 5, 7, 9]"
+    ],
+    "lineNumber": 27,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "start",
+        "description": "The start value for the range"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "stop",
+        "description": "The stop value for the range"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "step",
+        "description": "A optional step value"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": "Either value or replaceValue"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 68,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/splitAt.js",
+    "memberof": null,
+    "longname": "lib/splitAt.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.splitAt = splitAt;\n/**\n * Splits an array or string at a given position.\n *\n * @since v0.1.0\n * @param {Number} position - At the position it should split on\n * @param {Array} list - The array of items\n * @return {Array} An array with the splitted items\n * @example\n *   splitAt(6, \"Hello World!\") // => [\"Hello \", \"World!\"]\n *\n *   splitAt(3, [1, 2, 3, 4, 5]) // => [[1, 2, 3], [4, 5]]\n *   splitAt(1, [1, 2, 3]) // => [[1], [2, 3]]\n *   splitAt(3, [1, 2, 3]) // => [[1, 2, 3], []]\n *   splitAt(4, [1, 2, 3]) // => [[1, 2, 3], []]\n *\n *   splitAt(0, [1, 2, 3]) // => [[], [1, 2, 3]]\n *\n *   splitAt(-1, [1, 2, 3]) // => [[], [1, 2, 3]]\n */\nfunction splitAt(position, list) {\n    if (typeof list === 'string') {\n        return [list.substring(0, position), list.substring(position)];\n    }\n    return position < 0 ? [[], list.slice(0)] : [list.slice(0, position), list.slice(position)];\n}"
+  },
+  {
+    "__docId__": 69,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "splitAt",
+    "memberof": "lib/splitAt.js",
+    "longname": "lib/splitAt.js~splitAt",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/splitAt.js",
+    "importStyle": null,
+    "description": "Splits an array or string at a given position.",
+    "examples": [
+      "  splitAt(6, \"Hello World!\") // => [\"Hello \", \"World!\"]\n\n  splitAt(3, [1, 2, 3, 4, 5]) // => [[1, 2, 3], [4, 5]]\n  splitAt(1, [1, 2, 3]) // => [[1], [2, 3]]\n  splitAt(3, [1, 2, 3]) // => [[1, 2, 3], []]\n  splitAt(4, [1, 2, 3]) // => [[1, 2, 3], []]\n\n  splitAt(0, [1, 2, 3]) // => [[], [1, 2, 3]]\n\n  splitAt(-1, [1, 2, 3]) // => [[], [1, 2, 3]]"
+    ],
+    "lineNumber": 26,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "position",
+        "description": "At the position it should split on"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The array of items"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": "An array with the splitted items"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 70,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/sum.js",
+    "memberof": null,
+    "longname": "lib/sum.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.sum = sum;\n/**\n * Summarizes the numbers of a given list.\n *\n * @since v0.1.0\n * @param {Array} list - The array of numbers\n * @return {Number} The summarization of the numbers\n * @example\n *   sum([1, 2, 3]) // => 6\n *   sum([10, 33, 991]) // => 1034\n *\n *   sum([5, -10, 3]) // => -2\n */\nfunction sum(list) {\n  return list.reduce(function (prev, curr) {\n    return prev + curr;\n  }, 0);\n}"
+  },
+  {
+    "__docId__": 71,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "sum",
+    "memberof": "lib/sum.js",
+    "longname": "lib/sum.js~sum",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/sum.js",
+    "importStyle": null,
+    "description": "Summarizes the numbers of a given list.",
+    "examples": [
+      "  sum([1, 2, 3]) // => 6\n  sum([10, 33, 991]) // => 1034\n\n  sum([5, -10, 3]) // => -2"
+    ],
+    "lineNumber": 19,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The array of numbers"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": "The summarization of the numbers"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 72,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/tail.js",
+    "memberof": null,
+    "longname": "lib/tail.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.tail = tail;\n\nfunction _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }\n\n/**\n * Extracts the elements after the head of a list.\n *\n * @since v0.1.0\n * @param {Array} list - The array\n * @return {Array} - The tail of the list\n * @example\n *   tail(range(1, 11)) // => [2, 3, 4, 5, 6, 7, 8, 9, 10]\n *   tail([1, 2, 3]) // => [2, 3]\n *   tail([29, 10]) // => [10]\n *   tail([300]) // => [300]\n *   tail([]) //=> undefined\n *\n *   tail('abc') // => ['b, c']\n *   tail('ze') // => ['e']\n *   tail('q') // => ['q']\n *   tail('') //=> undefined\n */\nfunction tail(list) {\n    if (list.length === 0) return undefined;\n    var results = [];\n    list.length > 1 ? results.push.apply(results, _toConsumableArray(list.slice(1))) : results.push.apply(results, _toConsumableArray(list));\n    return results;\n}"
+  },
+  {
+    "__docId__": 73,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "_toConsumableArray",
+    "memberof": "lib/tail.js",
+    "longname": "lib/tail.js~_toConsumableArray",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/tail.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "params": [
+      {
+        "name": "arr",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 74,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "tail",
+    "memberof": "lib/tail.js",
+    "longname": "lib/tail.js~tail",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/tail.js",
+    "importStyle": null,
+    "description": "Extracts the elements after the head of a list.",
+    "examples": [
+      "  tail(range(1, 11)) // => [2, 3, 4, 5, 6, 7, 8, 9, 10]\n  tail([1, 2, 3]) // => [2, 3]\n  tail([29, 10]) // => [10]\n  tail([300]) // => [300]\n  tail([]) //=> undefined\n\n  tail('abc') // => ['b, c']\n  tail('ze') // => ['e']\n  tail('q') // => ['q']\n  tail('') //=> undefined"
+    ],
+    "lineNumber": 28,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The array"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": "The tail of the list"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 75,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/takeWhile.js",
+    "memberof": null,
+    "longname": "lib/takeWhile.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.takeWhile = takeWhile;\n/**\n * Returns the elements that satisfies the provided predicate function.\n *\n * @since v0.1.0\n * @param {Function} fn - The predicate function\n * @param {Array} list - The list to go through\n * @return {Array}\n * @example\n *   takeWhile(a => a < 3, [1, 2, 3, 4, 1, 2, 3, 4]) // => [1, 2]\n *   takeWhile(a => a < 9, [1, 2, 3]) // => [1, 2, 3]\n *   takeWhile(a => a < 0, [1, 2, 3]) // => []\n *\n */\nfunction takeWhile(fn, list) {\n    var results = [];\n    list.map(function (element) {\n        if (fn(element) && !results.includes(element)) {\n            results.push(element);\n        }\n    });\n    return results;\n}"
+  },
+  {
+    "__docId__": 76,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "takeWhile",
+    "memberof": "lib/takeWhile.js",
+    "longname": "lib/takeWhile.js~takeWhile",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/takeWhile.js",
+    "importStyle": null,
+    "description": "Returns the elements that satisfies the provided predicate function.",
+    "examples": [
+      "  takeWhile(a => a < 3, [1, 2, 3, 4, 1, 2, 3, 4]) // => [1, 2]\n  takeWhile(a => a < 9, [1, 2, 3]) // => [1, 2, 3]\n  takeWhile(a => a < 0, [1, 2, 3]) // => []"
+    ],
+    "lineNumber": 20,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fn",
+        "description": "The predicate function"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": "The list to go through"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 77,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/transpose.js",
+    "memberof": null,
+    "longname": "lib/transpose.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.transpose = transpose;\n/**\n * Transposes the rows and the columns.\n *\n * @since v0.1.0\n * @param {Array} list\n * @return {Array}\n * @example\n *   transpose([[1, 2, 3], [4, 5, 6]]) // => [[1, 4], [2, 5], [3, 6]]\n *\n *   transpose([[10, 11], [20], [], [30, 31, 32]]) // => [[10, 20, 30], [11, 31], [32]]\n */\nfunction transpose(list) {\n    if (list.length === 0) return undefined;\n    var indices = {};\n    list.map(function (l) {\n        return l.reduce(function (obj, current, index) {\n            if (!(index in indices)) {\n                indices[index] = [];\n            }\n            indices[index].push(current);\n            return obj;\n        }, []);\n    });\n    return Object.values(indices);\n}"
+  },
+  {
+    "__docId__": 78,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "transpose",
+    "memberof": "lib/transpose.js",
+    "longname": "lib/transpose.js~transpose",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/transpose.js",
+    "importStyle": null,
+    "description": "Transposes the rows and the columns.",
+    "examples": [
+      "  transpose([[1, 2, 3], [4, 5, 6]]) // => [[1, 4], [2, 5], [3, 6]]\n\n  transpose([[10, 11], [20], [], [30, 31, 32]]) // => [[10, 20, 30], [11, 31], [32]]"
+    ],
+    "lineNumber": 18,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 79,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/uncons.js",
+    "memberof": null,
+    "longname": "lib/uncons.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.uncons = uncons;\n\nvar _head = require('./head');\n\nvar _tail = require('./tail');\n\nfunction _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }\n\n/**\n * Decomposes a list into its head and tail.\n *\n * @since v0.1.0\n * @param {Array|String} list\n * @return {Array}\n * @example\n *   uncons(range(1, 11)) // => [[1], [2, 3, 4, 5, 6, 7, 8, 9, 10]]\n *   uncons([1, 2, 3]) //=> [[1], [2, 3]]\n *   uncons([]) //=> undefined\n *\n *   uncons('abc') //=> [['a'], ['b', 'c']]\n *   uncons('ze') // => [['z'], ['e']]\n *   uncons('q') // => ['q']\n *   uncons('') //=> undefined\n */\nfunction uncons(list) {\n    if (list.length === 0) return undefined;\n    return list.length > 1 ? [[(0, _head.head)(list)], [].concat(_toConsumableArray((0, _tail.tail)(list)))] : [].concat(_toConsumableArray(list));\n}"
+  },
+  {
+    "__docId__": 80,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_head",
+    "memberof": "lib/uncons.js",
+    "longname": "lib/uncons.js~_head",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/uncons.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_tail",
+    "memberof": "lib/uncons.js",
+    "longname": "lib/uncons.js~_tail",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/uncons.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "_toConsumableArray",
+    "memberof": "lib/uncons.js",
+    "longname": "lib/uncons.js~_toConsumableArray",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/uncons.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "params": [
+      {
+        "name": "arr",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 83,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "uncons",
+    "memberof": "lib/uncons.js",
+    "longname": "lib/uncons.js~uncons",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/uncons.js",
+    "importStyle": null,
+    "description": "Decomposes a list into its head and tail.",
+    "examples": [
+      "  uncons(range(1, 11)) // => [[1], [2, 3, 4, 5, 6, 7, 8, 9, 10]]\n  uncons([1, 2, 3]) //=> [[1], [2, 3]]\n  uncons([]) //=> undefined\n\n  uncons('abc') //=> [['a'], ['b', 'c']]\n  uncons('ze') // => [['z'], ['e']]\n  uncons('q') // => ['q']\n  uncons('') //=> undefined"
+    ],
+    "lineNumber": 30,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "list",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 84,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/zip.js",
+    "memberof": null,
+    "longname": "lib/zip.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.zip = zip;\n/**\n * Takes two lists and returns a list of corresponding pairs.\n *\n * @since v0.1.0\n * @param {Array} left - The left (first) array\n * @param {Array} right - The right (second) array\n * @param {Function} [combinerFunction] - A optional combiner function\n * @return {Array} Returns a list of corresponding pairs\n * @example\n *   zip([0, 5], [1, 10]) // => [[0, 1], [5, 10]]\n *\n *   const books = [\n *     {id: 1, name: 'The old man and the Sea'},\n *     {id: 2, name: 'Harry Potter and the Chamber of Secrets'},\n *     {id: 3, name: 'Jane Eyre'}\n *   ]\n *   const ratings = [{id: 1, rating: 4.1}, {id: 2, rating: 3.3}, {id: 3, rating: 5.0}]\n *   zip(books, ratings, (book, rating) => {\n *     return {bookId: book.id, ratingId: rating.id}\n *   }) // => [{bookId: 1, ratingId: 1}], [{bookId: 2, ratingId: 2}], [{bookId: 3, ratingId: 3}]\n */\nfunction zip(left, right, combinerFunction) {\n    var results = [];\n    for (var i = 0; i < Math.min(left.length, right.length); i += 1) {\n        combinerFunction ? results.push([combinerFunction(left[i], right[i])]) : results.push([left[i], right[i]]);\n    }\n    return results;\n}"
+  },
+  {
+    "__docId__": 85,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "zip",
+    "memberof": "lib/zip.js",
+    "longname": "lib/zip.js~zip",
+    "access": null,
+    "export": false,
+    "importPath": "carrying/lib/zip.js",
+    "importStyle": null,
+    "description": "Takes two lists and returns a list of corresponding pairs.",
+    "examples": [
+      "  zip([0, 5], [1, 10]) // => [[0, 1], [5, 10]]\n\n  const books = [\n    {id: 1, name: 'The old man and the Sea'},\n    {id: 2, name: 'Harry Potter and the Chamber of Secrets'},\n    {id: 3, name: 'Jane Eyre'}\n  ]\n  const ratings = [{id: 1, rating: 4.1}, {id: 2, rating: 3.3}, {id: 3, rating: 5.0}]\n  zip(books, ratings, (book, rating) => {\n    return {bookId: book.id, ratingId: rating.id}\n  }) // => [{bookId: 1, ratingId: 1}], [{bookId: 2, ratingId: 2}], [{bookId: 3, ratingId: 3}]"
+    ],
+    "lineNumber": 28,
+    "since": "v0.1.0",
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "left",
+        "description": "The left (first) array"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "right",
+        "description": "The right (second) array"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "combinerFunction",
+        "description": "A optional combiner function"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": "Returns a list of corresponding pairs"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 87,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 95,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 100,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 101,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 102,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 104,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 109,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 110,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 111,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 112,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 115,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 116,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 117,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 119,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 120,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 121,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 122,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 123,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 124,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 125,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 126,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 127,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 128,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 129,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 130,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 131,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 132,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 133,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 135,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 136,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 137,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 138,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 139,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 140,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 141,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 142,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 143,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/compose.spec.ts",
+    "memberof": null,
+    "longname": "test/compose.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {compose} from '../src/compose'\n\n/** @test {compose} */\ndescribe('compose', () => {\n  it('should return a function', () => {\n    const f = compose(\n      () => {}\n    )\n\n    expect(f).to.be.an.instanceof(Function)\n  })\n\n  it('should be able to compose three functions', () => {\n    const f = compose(\n      a => a + 1,\n      a => -a,\n      Math.pow\n    )\n\n    expect(f(3, 4)).to.equal(-80)\n  })\n})\n"
+  },
+  {
+    "__docId__": 144,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe0",
+    "testId": 0,
+    "memberof": "test/compose.spec.ts",
+    "testDepth": 0,
+    "longname": "test/compose.spec.ts~describe0",
+    "access": null,
+    "description": "compose",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{compose}"
+      }
+    ],
+    "testTargets": [
+      "compose"
+    ]
+  },
+  {
+    "__docId__": 145,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it1",
+    "testId": 1,
+    "memberof": "test/compose.spec.ts~describe0",
+    "testDepth": 1,
+    "longname": "test/compose.spec.ts~describe0.it1",
+    "access": null,
+    "description": "should return a function",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 146,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it2",
+    "testId": 2,
+    "memberof": "test/compose.spec.ts~describe0",
+    "testDepth": 1,
+    "longname": "test/compose.spec.ts~describe0.it2",
+    "access": null,
+    "description": "should be able to compose three functions",
+    "lineNumber": 14
+  },
+  {
+    "__docId__": 147,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/concat.spec.ts",
+    "memberof": null,
+    "longname": "test/concat.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {intersperse} from '../src/intersperse'\nimport {concat} from '../src/concat'\n\n/** @test {concat} */\ndescribe('concat', () => {\n  it('should concatenation all the elements of a list', () => {\n    expect(concat([[4, 5, 6], [1, 2, 3]])).to.deep.equal([4, 5, 6, 1, 2, 3])\n\n    expect(concat(intersperse(' ', ['intersperse', 'is', 'a', 'fun', 'function', '!'])))\n      .to.equal('intersperse is a fun function !')\n  })\n})\n"
+  },
+  {
+    "__docId__": 148,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe3",
+    "testId": 3,
+    "memberof": "test/concat.spec.ts",
+    "testDepth": 0,
+    "longname": "test/concat.spec.ts~describe3",
+    "access": null,
+    "description": "concat",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{concat}"
+      }
+    ],
+    "testTargets": [
+      "concat"
+    ]
+  },
+  {
+    "__docId__": 149,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it4",
+    "testId": 4,
+    "memberof": "test/concat.spec.ts~describe3",
+    "testDepth": 1,
+    "longname": "test/concat.spec.ts~describe3.it4",
+    "access": null,
+    "description": "should concatenation all the elements of a list",
+    "lineNumber": 7
+  },
+  {
+    "__docId__": 150,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/concatMap.spec.ts",
+    "memberof": null,
+    "longname": "test/concatMap.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {intersperse} from '../src/intersperse'\nimport {concatMap} from '../src/concatMap'\n\n/** @test {concatMap} */\ndescribe('concatMap', () => {\n  it('should apply the function on all the elements and concatenate it', () => {\n    expect(concatMap(a => a * 2, [[4, 5, 6], [1, 2, 3]])).to.deep.equal([8, 10, 12, 2, 4, 6])\n  })\n})\n"
+  },
+  {
+    "__docId__": 151,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe5",
+    "testId": 5,
+    "memberof": "test/concatMap.spec.ts",
+    "testDepth": 0,
+    "longname": "test/concatMap.spec.ts~describe5",
+    "access": null,
+    "description": "concatMap",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{concatMap}"
+      }
+    ],
+    "testTargets": [
+      "concatMap"
+    ]
+  },
+  {
+    "__docId__": 152,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it6",
+    "testId": 6,
+    "memberof": "test/concatMap.spec.ts~describe5",
+    "testDepth": 1,
+    "longname": "test/concatMap.spec.ts~describe5.it6",
+    "access": null,
+    "description": "should apply the function on all the elements and concatenate it",
+    "lineNumber": 7
+  },
+  {
+    "__docId__": 153,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/curry.spec.ts",
+    "memberof": null,
+    "longname": "test/curry.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {curry} from '../src/curry'\n\n/** @test {curry} */\ndescribe('curry', () => {\n  it('should return a curried function', () => {\n    const greeter = (greeting, name) => `${greeting} ${name}`\n    const curriedGreeter = curry(greeter)\n    const helloGreeting = curriedGreeter('Hello')\n    expect(helloGreeting('Buzz')).to.equal('Hello Buzz')\n  })\n\n  it('should return another curried function', () => {\n    const add = (a, b) => a + b\n\n    const curriedAdd = curry(add)\n    const addThree = curriedAdd(3)\n    expect(addThree(50)).to.equal(53)\n  })\n})\n"
+  },
+  {
+    "__docId__": 154,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe7",
+    "testId": 7,
+    "memberof": "test/curry.spec.ts",
+    "testDepth": 0,
+    "longname": "test/curry.spec.ts~describe7",
+    "access": null,
+    "description": "curry",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{curry}"
+      }
+    ],
+    "testTargets": [
+      "curry"
+    ]
+  },
+  {
+    "__docId__": 155,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it8",
+    "testId": 8,
+    "memberof": "test/curry.spec.ts~describe7",
+    "testDepth": 1,
+    "longname": "test/curry.spec.ts~describe7.it8",
+    "access": null,
+    "description": "should return a curried function",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 156,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it9",
+    "testId": 9,
+    "memberof": "test/curry.spec.ts~describe7",
+    "testDepth": 1,
+    "longname": "test/curry.spec.ts~describe7.it9",
+    "access": null,
+    "description": "should return another curried function",
+    "lineNumber": 13
+  },
+  {
+    "__docId__": 157,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/curryN.spec.ts",
+    "memberof": null,
+    "longname": "test/curryN.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 0,
+    "content": ""
+  },
+  {
+    "__docId__": 158,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/dropWhile.spec.ts",
+    "memberof": null,
+    "longname": "test/dropWhile.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {dropWhile} from '../src/dropWhile'\n\n/** @test {dropWhile} */\ndescribe('dropWhile', () => {\n  it('should return the suffix remaining after takeWhile', () => {\n    expect(dropWhile(a => a < 3, [1, 2, 3, 4, 5, 1, 2, 3])).to.deep.equal([3, 4, 5, 1, 2, 3])\n    expect(dropWhile(a => a < 9, [1, 2, 3])).to.deep.equal([])\n    expect(dropWhile(a => a < 0, [1, 2, 3])).to.deep.equal([1, 2, 3])\n  })\n})\n"
+  },
+  {
+    "__docId__": 159,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe10",
+    "testId": 10,
+    "memberof": "test/dropWhile.spec.ts",
+    "testDepth": 0,
+    "longname": "test/dropWhile.spec.ts~describe10",
+    "access": null,
+    "description": "dropWhile",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{dropWhile}"
+      }
+    ],
+    "testTargets": [
+      "dropWhile"
+    ]
+  },
+  {
+    "__docId__": 160,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it11",
+    "testId": 11,
+    "memberof": "test/dropWhile.spec.ts~describe10",
+    "testDepth": 1,
+    "longname": "test/dropWhile.spec.ts~describe10.it11",
+    "access": null,
+    "description": "should return the suffix remaining after takeWhile",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 161,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/flip.spec.ts",
+    "memberof": null,
+    "longname": "test/flip.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {flip} from '../src/flip'\n\n/** @test {flip} */\ndescribe('flip', () => {\n  it('should reverse the arguments', () => {\n    const merge = (a, b) => [].concat(a, b)\n    expect(flip(merge)(1, 2)).to.deep.equal([2, 1])\n  })\n})\n"
+  },
+  {
+    "__docId__": 162,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe12",
+    "testId": 12,
+    "memberof": "test/flip.spec.ts",
+    "testDepth": 0,
+    "longname": "test/flip.spec.ts~describe12",
+    "access": null,
+    "description": "flip",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{flip}"
+      }
+    ],
+    "testTargets": [
+      "flip"
+    ]
+  },
+  {
+    "__docId__": 163,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it13",
+    "testId": 13,
+    "memberof": "test/flip.spec.ts~describe12",
+    "testDepth": 1,
+    "longname": "test/flip.spec.ts~describe12.it13",
+    "access": null,
+    "description": "should reverse the arguments",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 164,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/foldl.spec.ts",
+    "memberof": null,
+    "longname": "test/foldl.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {foldl} from '../src/foldl'\n\n/** @test {foldl} */\ndescribe('foldl', () => {\n  it('should apply the provided function', () => {\n    const add = (prev, current) => prev + current\n    expect(foldl(add)([1, 2, 3])).to.equal(6)\n  })\n})\n"
+  },
+  {
+    "__docId__": 165,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe14",
+    "testId": 14,
+    "memberof": "test/foldl.spec.ts",
+    "testDepth": 0,
+    "longname": "test/foldl.spec.ts~describe14",
+    "access": null,
+    "description": "foldl",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{foldl}"
+      }
+    ],
+    "testTargets": [
+      "foldl"
+    ]
+  },
+  {
+    "__docId__": 166,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it15",
+    "testId": 15,
+    "memberof": "test/foldl.spec.ts~describe14",
+    "testDepth": 1,
+    "longname": "test/foldl.spec.ts~describe14.it15",
+    "access": null,
+    "description": "should apply the provided function",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 167,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/head.spec.ts",
+    "memberof": null,
+    "longname": "test/head.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {head} from '../src/head'\n\n/** @test {head} */\ndescribe('head', () => {\n  it('should return the head of a list', () => {\n    expect(head([1, 2, 3])).to.equal(1)\n    expect(head([29, 10])).to.equal(29)\n    expect(head([300])).to.equal(300)\n  })\n\n  it('should return undefined on an empty list', () => {\n    expect(head([])).to.be.undefined\n  })\n\n  it('should return the head of a string', () => {\n    expect(head('abc')).to.equal('a')\n    expect(head('ze')).to.equal('z')\n    expect(head('q')).to.equal('q')\n  })\n\n  it('should return undefined on an empty string', () => {\n    expect(head('')).to.be.undefined\n  })\n})\n"
+  },
+  {
+    "__docId__": 168,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe16",
+    "testId": 16,
+    "memberof": "test/head.spec.ts",
+    "testDepth": 0,
+    "longname": "test/head.spec.ts~describe16",
+    "access": null,
+    "description": "head",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{head}"
+      }
+    ],
+    "testTargets": [
+      "head"
+    ]
+  },
+  {
+    "__docId__": 169,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it17",
+    "testId": 17,
+    "memberof": "test/head.spec.ts~describe16",
+    "testDepth": 1,
+    "longname": "test/head.spec.ts~describe16.it17",
+    "access": null,
+    "description": "should return the head of a list",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 170,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it18",
+    "testId": 18,
+    "memberof": "test/head.spec.ts~describe16",
+    "testDepth": 1,
+    "longname": "test/head.spec.ts~describe16.it18",
+    "access": null,
+    "description": "should return undefined on an empty list",
+    "lineNumber": 12
+  },
+  {
+    "__docId__": 171,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it19",
+    "testId": 19,
+    "memberof": "test/head.spec.ts~describe16",
+    "testDepth": 1,
+    "longname": "test/head.spec.ts~describe16.it19",
+    "access": null,
+    "description": "should return the head of a string",
+    "lineNumber": 16
+  },
+  {
+    "__docId__": 172,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it20",
+    "testId": 20,
+    "memberof": "test/head.spec.ts~describe16",
+    "testDepth": 1,
+    "longname": "test/head.spec.ts~describe16.it20",
+    "access": null,
+    "description": "should return undefined on an empty string",
+    "lineNumber": 22
+  },
+  {
+    "__docId__": 173,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/init.spec.ts",
+    "memberof": null,
+    "longname": "test/init.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {range} from '../src/range'\nimport {init} from '../src/init'\n\n/** @test {init} */\ndescribe('init', () => {\n  it('should return all the elements of a list except the last one', () => {\n    expect(init(range(1, 11))).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9])\n    expect(init([1, 2, 3])).to.deep.equal([1, 2])\n    expect(init([29, 10])).to.deep.equal([29])\n    expect(init([300])).to.deep.equal([300])\n  })\n\n  it('should return undefined on an empty list', () => {\n    expect(init([])).to.be.undefined\n  })\n\n  it('should return all the elements of a list except the last one of a string', () => {\n    expect(init('abc')).to.deep.equal(['a', 'b'])\n    expect(init('ze')).to.deep.equal(['z'])\n    expect(init('q')).to.deep.equal(['q'])\n  })\n\n  it('should return undefined on an empty string', () => {\n    expect(init('')).to.be.undefined\n  })\n})\n"
+  },
+  {
+    "__docId__": 174,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe21",
+    "testId": 21,
+    "memberof": "test/init.spec.ts",
+    "testDepth": 0,
+    "longname": "test/init.spec.ts~describe21",
+    "access": null,
+    "description": "init",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{init}"
+      }
+    ],
+    "testTargets": [
+      "init"
+    ]
+  },
+  {
+    "__docId__": 175,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it22",
+    "testId": 22,
+    "memberof": "test/init.spec.ts~describe21",
+    "testDepth": 1,
+    "longname": "test/init.spec.ts~describe21.it22",
+    "access": null,
+    "description": "should return all the elements of a list except the last one",
+    "lineNumber": 7
+  },
+  {
+    "__docId__": 176,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it23",
+    "testId": 23,
+    "memberof": "test/init.spec.ts~describe21",
+    "testDepth": 1,
+    "longname": "test/init.spec.ts~describe21.it23",
+    "access": null,
+    "description": "should return undefined on an empty list",
+    "lineNumber": 14
+  },
+  {
+    "__docId__": 177,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it24",
+    "testId": 24,
+    "memberof": "test/init.spec.ts~describe21",
+    "testDepth": 1,
+    "longname": "test/init.spec.ts~describe21.it24",
+    "access": null,
+    "description": "should return all the elements of a list except the last one of a string",
+    "lineNumber": 18
+  },
+  {
+    "__docId__": 178,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it25",
+    "testId": 25,
+    "memberof": "test/init.spec.ts~describe21",
+    "testDepth": 1,
+    "longname": "test/init.spec.ts~describe21.it25",
+    "access": null,
+    "description": "should return undefined on an empty string",
+    "lineNumber": 24
+  },
+  {
+    "__docId__": 179,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/intersperse.spec.ts",
+    "memberof": null,
+    "longname": "test/intersperse.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {intersperse} from '../src/intersperse'\n\n/** @test {intersperse} */\ndescribe('intersperse', () => {\n  it('should intersperse a element in a list', () => {\n    expect(intersperse(' ', ['intersperse', 'is', 'a', 'fun', 'function', '!']))\n      .to.deep.equal(['intersperse', ' ', 'is', ' ', 'a', ' ',  'fun', ' ',  'function', ' ',  '!'])\n  })\n\n  it('should intersperse a element in a string', () => {\n    expect(intersperse(',', 'abcde')).to.equal('a,b,c,d,e')\n  })\n})\n"
+  },
+  {
+    "__docId__": 180,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe26",
+    "testId": 26,
+    "memberof": "test/intersperse.spec.ts",
+    "testDepth": 0,
+    "longname": "test/intersperse.spec.ts~describe26",
+    "access": null,
+    "description": "intersperse",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{intersperse}"
+      }
+    ],
+    "testTargets": [
+      "intersperse"
+    ]
+  },
+  {
+    "__docId__": 181,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it27",
+    "testId": 27,
+    "memberof": "test/intersperse.spec.ts~describe26",
+    "testDepth": 1,
+    "longname": "test/intersperse.spec.ts~describe26.it27",
+    "access": null,
+    "description": "should intersperse a element in a list",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 182,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it28",
+    "testId": 28,
+    "memberof": "test/intersperse.spec.ts~describe26",
+    "testDepth": 1,
+    "longname": "test/intersperse.spec.ts~describe26.it28",
+    "access": null,
+    "description": "should intersperse a element in a string",
+    "lineNumber": 11
+  },
+  {
+    "__docId__": 183,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/last.spec.ts",
+    "memberof": null,
+    "longname": "test/last.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {last} from '../src/last'\n\n/** @test {last} */\ndescribe('last', () => {\n  it('should return the last element of a list', () => {\n    expect(last([1, 2, 3])).to.equal(3)\n    expect(last([29, 10])).to.equal(10)\n    expect(last([300])).to.equal(300)\n  })\n\n  it('should return undefined on an empty list', () => {\n    expect(last([])).to.equal(undefined)\n  })\n\n  it('should return the last character of a string', () => {\n    expect(last('abc')).to.equal('c')\n    expect(last('ze')).to.equal('e')\n    expect(last('q')).to.equal('q')\n  })\n\n  it('should return undefined on an empty string', () => {\n    expect(last('')).to.equal(undefined)\n  })\n})\n"
+  },
+  {
+    "__docId__": 184,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe29",
+    "testId": 29,
+    "memberof": "test/last.spec.ts",
+    "testDepth": 0,
+    "longname": "test/last.spec.ts~describe29",
+    "access": null,
+    "description": "last",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{last}"
+      }
+    ],
+    "testTargets": [
+      "last"
+    ]
+  },
+  {
+    "__docId__": 185,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it30",
+    "testId": 30,
+    "memberof": "test/last.spec.ts~describe29",
+    "testDepth": 1,
+    "longname": "test/last.spec.ts~describe29.it30",
+    "access": null,
+    "description": "should return the last element of a list",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 186,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it31",
+    "testId": 31,
+    "memberof": "test/last.spec.ts~describe29",
+    "testDepth": 1,
+    "longname": "test/last.spec.ts~describe29.it31",
+    "access": null,
+    "description": "should return undefined on an empty list",
+    "lineNumber": 12
+  },
+  {
+    "__docId__": 187,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it32",
+    "testId": 32,
+    "memberof": "test/last.spec.ts~describe29",
+    "testDepth": 1,
+    "longname": "test/last.spec.ts~describe29.it32",
+    "access": null,
+    "description": "should return the last character of a string",
+    "lineNumber": 16
+  },
+  {
+    "__docId__": 188,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it33",
+    "testId": 33,
+    "memberof": "test/last.spec.ts~describe29",
+    "testDepth": 1,
+    "longname": "test/last.spec.ts~describe29.it33",
+    "access": null,
+    "description": "should return undefined on an empty string",
+    "lineNumber": 22
+  },
+  {
+    "__docId__": 189,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/maximum.spec.ts",
+    "memberof": null,
+    "longname": "test/maximum.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {maximum} from '../src/maximum'\n\n/** @test {maximum} */\ndescribe('maximum', () => {\n  it('should return the largest element', () => {\n    expect(maximum([1, 2, 3])).to.equal(3)\n    expect(maximum([991, 10, 33])).to.equal(991)\n  })\n\n  it('should handle negative numbers', () => {\n    expect(maximum([5, -10, 3])).to.equal(5)\n  })\n})\n"
+  },
+  {
+    "__docId__": 190,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe34",
+    "testId": 34,
+    "memberof": "test/maximum.spec.ts",
+    "testDepth": 0,
+    "longname": "test/maximum.spec.ts~describe34",
+    "access": null,
+    "description": "maximum",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{maximum}"
+      }
+    ],
+    "testTargets": [
+      "maximum"
+    ]
+  },
+  {
+    "__docId__": 191,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it35",
+    "testId": 35,
+    "memberof": "test/maximum.spec.ts~describe34",
+    "testDepth": 1,
+    "longname": "test/maximum.spec.ts~describe34.it35",
+    "access": null,
+    "description": "should return the largest element",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 192,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it36",
+    "testId": 36,
+    "memberof": "test/maximum.spec.ts~describe34",
+    "testDepth": 1,
+    "longname": "test/maximum.spec.ts~describe34.it36",
+    "access": null,
+    "description": "should handle negative numbers",
+    "lineNumber": 11
+  },
+  {
+    "__docId__": 193,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/minimum.spec.ts",
+    "memberof": null,
+    "longname": "test/minimum.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {minimum} from '../src/minimum'\n\n/** @test {minimum} */\ndescribe('minimum', () => {\n  it('should return the lowest element', () => {\n    expect(minimum([1, 2, 3])).to.equal(1)\n    expect(minimum([991, 10, 33])).to.equal(10)\n  })\n\n  it('should handle negative numbers', () => {\n    expect(minimum([5, -10, 3])).to.equal(-10)\n  })\n})\n"
+  },
+  {
+    "__docId__": 194,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe37",
+    "testId": 37,
+    "memberof": "test/minimum.spec.ts",
+    "testDepth": 0,
+    "longname": "test/minimum.spec.ts~describe37",
+    "access": null,
+    "description": "minimum",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{minimum}"
+      }
+    ],
+    "testTargets": [
+      "minimum"
+    ]
+  },
+  {
+    "__docId__": 195,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it38",
+    "testId": 38,
+    "memberof": "test/minimum.spec.ts~describe37",
+    "testDepth": 1,
+    "longname": "test/minimum.spec.ts~describe37.it38",
+    "access": null,
+    "description": "should return the lowest element",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 196,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it39",
+    "testId": 39,
+    "memberof": "test/minimum.spec.ts~describe37",
+    "testDepth": 1,
+    "longname": "test/minimum.spec.ts~describe37.it39",
+    "access": null,
+    "description": "should handle negative numbers",
+    "lineNumber": 11
+  },
+  {
+    "__docId__": 197,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/nullAware.spec.ts",
+    "memberof": null,
+    "longname": "test/nullAware.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {nullAware} from '../src/nullAware'\n\n/** @test {nullAware} */\ndescribe('nullAware', () => {\n  it('should return value if first parameter is null', () => {\n    let x = null\n    x = nullAware(x, 'are null-aware, friendly to')\n    expect(x).to.equal('are null-aware, friendly to')\n  })\n\n  it('should return value if first parameter is undefined', () => {\n    let x = undefined\n    x = nullAware(x, 'are null-aware, friendly to')\n    expect(x).to.equal('are null-aware, friendly to')\n  })\n\n  it('should return handle more types than strings', () => {\n    expect(nullAware(null, {name: 'Aware'})).to.deep.equal({name: 'Aware'})\n    expect(nullAware(null, 50)).to.equal(50)\n    expect(nullAware(null, [1, 5, 10])).to.deep.equal([1, 5, 10])\n  })\n\n  it('should return the supposed to be null value if it is not null', () => {\n    expect(nullAware(1, 'this will not be used')).to.equal(1)\n  })\n})\n"
+  },
+  {
+    "__docId__": 198,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe40",
+    "testId": 40,
+    "memberof": "test/nullAware.spec.ts",
+    "testDepth": 0,
+    "longname": "test/nullAware.spec.ts~describe40",
+    "access": null,
+    "description": "nullAware",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{nullAware}"
+      }
+    ],
+    "testTargets": [
+      "nullAware"
+    ]
+  },
+  {
+    "__docId__": 199,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it41",
+    "testId": 41,
+    "memberof": "test/nullAware.spec.ts~describe40",
+    "testDepth": 1,
+    "longname": "test/nullAware.spec.ts~describe40.it41",
+    "access": null,
+    "description": "should return value if first parameter is null",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 200,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it42",
+    "testId": 42,
+    "memberof": "test/nullAware.spec.ts~describe40",
+    "testDepth": 1,
+    "longname": "test/nullAware.spec.ts~describe40.it42",
+    "access": null,
+    "description": "should return value if first parameter is undefined",
+    "lineNumber": 12
+  },
+  {
+    "__docId__": 201,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it43",
+    "testId": 43,
+    "memberof": "test/nullAware.spec.ts~describe40",
+    "testDepth": 1,
+    "longname": "test/nullAware.spec.ts~describe40.it43",
+    "access": null,
+    "description": "should return handle more types than strings",
+    "lineNumber": 18
+  },
+  {
+    "__docId__": 202,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it44",
+    "testId": 44,
+    "memberof": "test/nullAware.spec.ts~describe40",
+    "testDepth": 1,
+    "longname": "test/nullAware.spec.ts~describe40.it44",
+    "access": null,
+    "description": "should return the supposed to be null value if it is not null",
+    "lineNumber": 24
+  },
+  {
+    "__docId__": 203,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/product.spec.ts",
+    "memberof": null,
+    "longname": "test/product.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {product} from '../src/product'\n\n/** @test {product} */\ndescribe('product', () => {\n  it('should return the product of a list of numbers', () => {\n    expect(product([1, 2, 3])).to.equal(6)\n  })\n\n  it('should not remember the state of the accumulator', () => {\n    expect(product([1, 2, 3])).to.equal(6)\n    expect(product([1])).to.equal(1)\n    expect(product([10, 33, 991])).to.equal(327030)\n  })\n\n  it('should handle negative numbers', () => {\n    expect(product([5, -10, 3])).to.equal(-150)\n  })\n})\n"
+  },
+  {
+    "__docId__": 204,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe45",
+    "testId": 45,
+    "memberof": "test/product.spec.ts",
+    "testDepth": 0,
+    "longname": "test/product.spec.ts~describe45",
+    "access": null,
+    "description": "product",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{product}"
+      }
+    ],
+    "testTargets": [
+      "product"
+    ]
+  },
+  {
+    "__docId__": 205,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it46",
+    "testId": 46,
+    "memberof": "test/product.spec.ts~describe45",
+    "testDepth": 1,
+    "longname": "test/product.spec.ts~describe45.it46",
+    "access": null,
+    "description": "should return the product of a list of numbers",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 206,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it47",
+    "testId": 47,
+    "memberof": "test/product.spec.ts~describe45",
+    "testDepth": 1,
+    "longname": "test/product.spec.ts~describe45.it47",
+    "access": null,
+    "description": "should not remember the state of the accumulator",
+    "lineNumber": 10
+  },
+  {
+    "__docId__": 207,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it48",
+    "testId": 48,
+    "memberof": "test/product.spec.ts~describe45",
+    "testDepth": 1,
+    "longname": "test/product.spec.ts~describe45.it48",
+    "access": null,
+    "description": "should handle negative numbers",
+    "lineNumber": 16
+  },
+  {
+    "__docId__": 208,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/range.spec.ts",
+    "memberof": null,
+    "longname": "test/range.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {range} from '../src/range'\n\n/** @test {range} */\ndescribe('range', () => {\n  it('should produce a range between a start and stop', () => {\n    expect(range(1, 3)).to.deep.equal([1, 2])\n    expect(range(5, 11)).to.deep.equal([5, 6, 7, 8, 9, 10])\n  })\n\n  it('should return an empty list if start is bigger than stop', () => {\n    expect(range(10, 9)).to.deep.equal([])\n  })\n\n  it('should return an empty list if start is equal to stop', () => {\n    expect(range(2, 2)).to.deep.equal([])\n  })\n\n  it('should produce a range with a given step', () => {\n    expect(range(1, 10, 2)).to.deep.equal([1, 3, 5, 7, 9])\n  })\n})\n"
+  },
+  {
+    "__docId__": 209,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe49",
+    "testId": 49,
+    "memberof": "test/range.spec.ts",
+    "testDepth": 0,
+    "longname": "test/range.spec.ts~describe49",
+    "access": null,
+    "description": "range",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{range}"
+      }
+    ],
+    "testTargets": [
+      "range"
+    ]
+  },
+  {
+    "__docId__": 210,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it50",
+    "testId": 50,
+    "memberof": "test/range.spec.ts~describe49",
+    "testDepth": 1,
+    "longname": "test/range.spec.ts~describe49.it50",
+    "access": null,
+    "description": "should produce a range between a start and stop",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 211,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it51",
+    "testId": 51,
+    "memberof": "test/range.spec.ts~describe49",
+    "testDepth": 1,
+    "longname": "test/range.spec.ts~describe49.it51",
+    "access": null,
+    "description": "should return an empty list if start is bigger than stop",
+    "lineNumber": 11
+  },
+  {
+    "__docId__": 212,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it52",
+    "testId": 52,
+    "memberof": "test/range.spec.ts~describe49",
+    "testDepth": 1,
+    "longname": "test/range.spec.ts~describe49.it52",
+    "access": null,
+    "description": "should return an empty list if start is equal to stop",
+    "lineNumber": 15
+  },
+  {
+    "__docId__": 213,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it53",
+    "testId": 53,
+    "memberof": "test/range.spec.ts~describe49",
+    "testDepth": 1,
+    "longname": "test/range.spec.ts~describe49.it53",
+    "access": null,
+    "description": "should produce a range with a given step",
+    "lineNumber": 19
+  },
+  {
+    "__docId__": 214,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/splitAt.spec.ts",
+    "memberof": null,
+    "longname": "test/splitAt.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {splitAt} from '../src/splitAt'\n\n/** @test {splitAt} */\ndescribe('splitAt', () => {\n  it('should split a string', () => {\n    expect(splitAt(6, \"Hello World!\")).to.deep.equal([\"Hello \", \"World!\"])\n  })\n\n  it('should split a list', () => {\n    expect(splitAt(3, [1, 2, 3, 4, 5])).to.deep.equal([[1, 2, 3], [4, 5]])\n    expect(splitAt(1, [1, 2, 3])).to.deep.equal([[1], [2, 3]])\n    expect(splitAt(3, [1, 2, 3])).to.deep.equal([[1, 2, 3], []])\n    expect(splitAt(4, [1, 2, 3])).to.deep.equal([[1, 2, 3], []])\n  })\n\n  it('should split on zero position', () => {\n    expect(splitAt(0, [1, 2, 3])).to.deep.equal([[], [1, 2, 3]])\n  })\n\n  it('should split on negative position', () => {\n    expect(splitAt(-1, [1, 2, 3])).to.deep.equal([[], [1, 2, 3]])\n  })\n})\n"
+  },
+  {
+    "__docId__": 215,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe54",
+    "testId": 54,
+    "memberof": "test/splitAt.spec.ts",
+    "testDepth": 0,
+    "longname": "test/splitAt.spec.ts~describe54",
+    "access": null,
+    "description": "splitAt",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{splitAt}"
+      }
+    ],
+    "testTargets": [
+      "splitAt"
+    ]
+  },
+  {
+    "__docId__": 216,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it55",
+    "testId": 55,
+    "memberof": "test/splitAt.spec.ts~describe54",
+    "testDepth": 1,
+    "longname": "test/splitAt.spec.ts~describe54.it55",
+    "access": null,
+    "description": "should split a string",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 217,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it56",
+    "testId": 56,
+    "memberof": "test/splitAt.spec.ts~describe54",
+    "testDepth": 1,
+    "longname": "test/splitAt.spec.ts~describe54.it56",
+    "access": null,
+    "description": "should split a list",
+    "lineNumber": 10
+  },
+  {
+    "__docId__": 218,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it57",
+    "testId": 57,
+    "memberof": "test/splitAt.spec.ts~describe54",
+    "testDepth": 1,
+    "longname": "test/splitAt.spec.ts~describe54.it57",
+    "access": null,
+    "description": "should split on zero position",
+    "lineNumber": 17
+  },
+  {
+    "__docId__": 219,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it58",
+    "testId": 58,
+    "memberof": "test/splitAt.spec.ts~describe54",
+    "testDepth": 1,
+    "longname": "test/splitAt.spec.ts~describe54.it58",
+    "access": null,
+    "description": "should split on negative position",
+    "lineNumber": 21
+  },
+  {
+    "__docId__": 220,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/sum.spec.ts",
+    "memberof": null,
+    "longname": "test/sum.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {sum} from '../src/sum'\n\n/** @test {sum} */\ndescribe('sum', () => {\n  it('should summarize list of numbers', () => {\n    expect(sum([1, 2, 3])).to.equal(6)\n  })\n\n  it('should not remember the state of the accumulator', () => {\n    expect(sum([1, 2, 3])).to.equal(6)\n    expect(sum([1])).to.equal(1)\n    expect(sum([10, 33, 991])).to.equal(1034)\n  })\n\n  it('should handle negative numbers', () => {\n    expect(sum([5, -10, 3])).to.equal(-2)\n  })\n})\n"
+  },
+  {
+    "__docId__": 221,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe59",
+    "testId": 59,
+    "memberof": "test/sum.spec.ts",
+    "testDepth": 0,
+    "longname": "test/sum.spec.ts~describe59",
+    "access": null,
+    "description": "sum",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{sum}"
+      }
+    ],
+    "testTargets": [
+      "sum"
+    ]
+  },
+  {
+    "__docId__": 222,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it60",
+    "testId": 60,
+    "memberof": "test/sum.spec.ts~describe59",
+    "testDepth": 1,
+    "longname": "test/sum.spec.ts~describe59.it60",
+    "access": null,
+    "description": "should summarize list of numbers",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 223,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it61",
+    "testId": 61,
+    "memberof": "test/sum.spec.ts~describe59",
+    "testDepth": 1,
+    "longname": "test/sum.spec.ts~describe59.it61",
+    "access": null,
+    "description": "should not remember the state of the accumulator",
+    "lineNumber": 10
+  },
+  {
+    "__docId__": 224,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it62",
+    "testId": 62,
+    "memberof": "test/sum.spec.ts~describe59",
+    "testDepth": 1,
+    "longname": "test/sum.spec.ts~describe59.it62",
+    "access": null,
+    "description": "should handle negative numbers",
+    "lineNumber": 16
+  },
+  {
+    "__docId__": 225,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/tail.spec.ts",
+    "memberof": null,
+    "longname": "test/tail.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {range} from '../src/range'\nimport {tail} from '../src/tail'\n\n/** @test {tail} */\ndescribe('tail', () => {\n  it('should return the tail of a list', () => {\n    expect(tail(range(1, 11))).to.deep.equal([2, 3, 4, 5, 6, 7, 8, 9, 10])\n    expect(tail([1, 2, 3])).to.deep.equal([2, 3])\n    expect(tail([29, 10])).to.deep.equal([10])\n    expect(tail([300])).to.deep.equal([300])\n  })\n\n  it('should return undefined on an empty list', () => {\n    expect(tail([])).to.be.undefined\n  })\n\n  it('should return the tail of a string', () => {\n    expect(tail('abc')).to.deep.equal(['b', 'c'])\n    expect(tail('ze')).to.deep.equal(['e'])\n    expect(tail('q')).to.deep.equal(['q'])\n  })\n\n  it('should return undefined on an empty string', () => {\n    expect(tail('')).to.be.undefined\n  })\n})\n"
+  },
+  {
+    "__docId__": 226,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe63",
+    "testId": 63,
+    "memberof": "test/tail.spec.ts",
+    "testDepth": 0,
+    "longname": "test/tail.spec.ts~describe63",
+    "access": null,
+    "description": "tail",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{tail}"
+      }
+    ],
+    "testTargets": [
+      "tail"
+    ]
+  },
+  {
+    "__docId__": 227,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it64",
+    "testId": 64,
+    "memberof": "test/tail.spec.ts~describe63",
+    "testDepth": 1,
+    "longname": "test/tail.spec.ts~describe63.it64",
+    "access": null,
+    "description": "should return the tail of a list",
+    "lineNumber": 7
+  },
+  {
+    "__docId__": 228,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it65",
+    "testId": 65,
+    "memberof": "test/tail.spec.ts~describe63",
+    "testDepth": 1,
+    "longname": "test/tail.spec.ts~describe63.it65",
+    "access": null,
+    "description": "should return undefined on an empty list",
+    "lineNumber": 14
+  },
+  {
+    "__docId__": 229,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it66",
+    "testId": 66,
+    "memberof": "test/tail.spec.ts~describe63",
+    "testDepth": 1,
+    "longname": "test/tail.spec.ts~describe63.it66",
+    "access": null,
+    "description": "should return the tail of a string",
+    "lineNumber": 18
+  },
+  {
+    "__docId__": 230,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it67",
+    "testId": 67,
+    "memberof": "test/tail.spec.ts~describe63",
+    "testDepth": 1,
+    "longname": "test/tail.spec.ts~describe63.it67",
+    "access": null,
+    "description": "should return undefined on an empty string",
+    "lineNumber": 24
+  },
+  {
+    "__docId__": 231,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/takeWhile.spec.ts",
+    "memberof": null,
+    "longname": "test/takeWhile.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {takeWhile} from '../src/takeWhile'\n\n/** @test {takeWhile} */\ndescribe('takeWhile', () => {\n  it('should return the elements that satisfies the provided predicate function', () => {\n    expect(takeWhile(a => a < 3, [1, 2, 3, 4, 1, 2, 3, 4])).to.deep.equal([1, 2])\n    expect(takeWhile(a => a < 9, [1, 2, 3])).to.deep.equal([1, 2, 3])\n    expect(takeWhile(a => a < 0, [1, 2, 3])).to.deep.equal([])\n  })\n})\n"
+  },
+  {
+    "__docId__": 232,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe68",
+    "testId": 68,
+    "memberof": "test/takeWhile.spec.ts",
+    "testDepth": 0,
+    "longname": "test/takeWhile.spec.ts~describe68",
+    "access": null,
+    "description": "takeWhile",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{takeWhile}"
+      }
+    ],
+    "testTargets": [
+      "takeWhile"
+    ]
+  },
+  {
+    "__docId__": 233,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it69",
+    "testId": 69,
+    "memberof": "test/takeWhile.spec.ts~describe68",
+    "testDepth": 1,
+    "longname": "test/takeWhile.spec.ts~describe68.it69",
+    "access": null,
+    "description": "should return the elements that satisfies the provided predicate function",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 234,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/transpose.spec.ts",
+    "memberof": null,
+    "longname": "test/transpose.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {transpose} from '../src/transpose'\n\n/** @test {transpose} */\ndescribe('transpose', () => {\n  it('should transpose the rows and the columns', () => {\n    expect(transpose([[1, 2, 3], [4, 5, 6]])).to.deep.equal([[1, 4], [2, 5], [3, 6]])\n  })\n\n  it('should transpose if some rows are shorter than the others and skip them', () => {\n    expect(transpose([[10, 11], [20], [], [30, 31, 32]])).to.deep.equal([[10, 20, 30], [11, 31], [32]])\n  })\n})\n"
+  },
+  {
+    "__docId__": 235,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe70",
+    "testId": 70,
+    "memberof": "test/transpose.spec.ts",
+    "testDepth": 0,
+    "longname": "test/transpose.spec.ts~describe70",
+    "access": null,
+    "description": "transpose",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{transpose}"
+      }
+    ],
+    "testTargets": [
+      "transpose"
+    ]
+  },
+  {
+    "__docId__": 236,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it71",
+    "testId": 71,
+    "memberof": "test/transpose.spec.ts~describe70",
+    "testDepth": 1,
+    "longname": "test/transpose.spec.ts~describe70.it71",
+    "access": null,
+    "description": "should transpose the rows and the columns",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 237,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it72",
+    "testId": 72,
+    "memberof": "test/transpose.spec.ts~describe70",
+    "testDepth": 1,
+    "longname": "test/transpose.spec.ts~describe70.it72",
+    "access": null,
+    "description": "should transpose if some rows are shorter than the others and skip them",
+    "lineNumber": 10
+  },
+  {
+    "__docId__": 238,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/uncons.spec.ts",
+    "memberof": null,
+    "longname": "test/uncons.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {range} from '../src/range'\nimport {uncons} from '../src/uncons'\n\n/** @test {uncons} */\ndescribe('uncons', () => {\n  it('should decompose a list into its head and tail', () => {\n    expect(uncons(range(1, 11))).to.deep.equal([[1], [2, 3, 4, 5, 6, 7, 8, 9, 10]])\n    expect(uncons([1, 2, 3])).to.deep.equal([[1], [2, 3]])\n    expect(uncons([29, 10])).to.deep.equal([[29], [10]])\n    expect(uncons([300])).to.deep.equal([300])\n  })\n\n  it('should return undefined on an empty list', () => {\n    expect(uncons([])).to.be.undefined\n  })\n\n  it('should decompose a string into its head and tail', () => {\n    expect(uncons('abc')).to.deep.equal([['a'], ['b', 'c']])\n    expect(uncons('ze')).to.deep.equal([['z'], ['e']])\n    expect(uncons('q')).to.deep.equal(['q'])\n  })\n\n  it('should return undefined on an empty string', () => {\n    expect(uncons('')).to.be.undefined\n  })\n})\n"
+  },
+  {
+    "__docId__": 239,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe73",
+    "testId": 73,
+    "memberof": "test/uncons.spec.ts",
+    "testDepth": 0,
+    "longname": "test/uncons.spec.ts~describe73",
+    "access": null,
+    "description": "uncons",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{uncons}"
+      }
+    ],
+    "testTargets": [
+      "uncons"
+    ]
+  },
+  {
+    "__docId__": 240,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it74",
+    "testId": 74,
+    "memberof": "test/uncons.spec.ts~describe73",
+    "testDepth": 1,
+    "longname": "test/uncons.spec.ts~describe73.it74",
+    "access": null,
+    "description": "should decompose a list into its head and tail",
+    "lineNumber": 7
+  },
+  {
+    "__docId__": 241,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it75",
+    "testId": 75,
+    "memberof": "test/uncons.spec.ts~describe73",
+    "testDepth": 1,
+    "longname": "test/uncons.spec.ts~describe73.it75",
+    "access": null,
+    "description": "should return undefined on an empty list",
+    "lineNumber": 14
+  },
+  {
+    "__docId__": 242,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it76",
+    "testId": 76,
+    "memberof": "test/uncons.spec.ts~describe73",
+    "testDepth": 1,
+    "longname": "test/uncons.spec.ts~describe73.it76",
+    "access": null,
+    "description": "should decompose a string into its head and tail",
+    "lineNumber": 18
+  },
+  {
+    "__docId__": 243,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it77",
+    "testId": 77,
+    "memberof": "test/uncons.spec.ts~describe73",
+    "testDepth": 1,
+    "longname": "test/uncons.spec.ts~describe73.it77",
+    "access": null,
+    "description": "should return undefined on an empty string",
+    "lineNumber": 24
+  },
+  {
+    "__docId__": 244,
+    "kind": "testFile",
+    "static": true,
+    "variation": null,
+    "name": "test/zip.spec.ts",
+    "memberof": null,
+    "longname": "test/zip.spec.ts",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import {expect} from 'chai'\nimport {zip} from '../src/zip'\n\n/** @test {zip} */\ndescribe('zip', () => {\n  it('should return the first item in each array in one array and the second in another', () => {\n    expect(zip([0, 5], [1, 10])).to.deep.equal([[0, 1], [5, 10]])\n  })\n\n  it('should apply combinerFunction if provided', () => {\n    const books = [\n      {id: 1, name: 'The old man and the Sea'},\n      {id: 2, name: 'Harry Potter and the Chamber of Secrets'},\n      {id: 3, name: 'Jane Eyre'}\n    ]\n    const ratings = [{id: 1, rating: 4.1}, {id: 2, rating: 3.3}, {id: 3, rating: 5.0}]\n    const result = zip(books, ratings, (book, rating) => {\n\t\t\treturn {bookId: book.id, ratingId: rating.id}\n    })\n    expect(result).to.deep.equal([\n      [{bookId: 1, ratingId: 1}], [{bookId: 2, ratingId: 2}], [{bookId: 3, ratingId: 3}]\n    ])\n  })\n})\n"
+  },
+  {
+    "__docId__": 245,
+    "kind": "testDescribe",
+    "static": true,
+    "variation": null,
+    "name": "describe78",
+    "testId": 78,
+    "memberof": "test/zip.spec.ts",
+    "testDepth": 0,
+    "longname": "test/zip.spec.ts~describe78",
+    "access": null,
+    "description": "zip",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@test",
+        "tagValue": "{zip}"
+      }
+    ],
+    "testTargets": [
+      "zip"
+    ]
+  },
+  {
+    "__docId__": 246,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it79",
+    "testId": 79,
+    "memberof": "test/zip.spec.ts~describe78",
+    "testDepth": 1,
+    "longname": "test/zip.spec.ts~describe78.it79",
+    "access": null,
+    "description": "should return the first item in each array in one array and the second in another",
+    "lineNumber": 6
+  },
+  {
+    "__docId__": 247,
+    "kind": "testIt",
+    "static": true,
+    "variation": null,
+    "name": "it80",
+    "testId": 80,
+    "memberof": "test/zip.spec.ts~describe78",
+    "testDepth": 1,
+    "longname": "test/zip.spec.ts~describe78.it80",
+    "access": null,
+    "description": "should apply combinerFunction if provided",
+    "lineNumber": 10
+  }
+]

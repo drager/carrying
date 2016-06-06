@@ -1,0 +1,833 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "Literal",
+        "value": "use strict",
+        "raw": "'use strict'",
+        "range": [
+          0,
+          12
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 12
+          }
+        }
+      },
+      "range": [
+        0,
+        13
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "Object",
+            "range": [
+              15,
+              21
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 0
+              },
+              "end": {
+                "line": 3,
+                "column": 6
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "defineProperty",
+            "range": [
+              22,
+              36
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 7
+              },
+              "end": {
+                "line": 3,
+                "column": 21
+              }
+            }
+          },
+          "range": [
+            15,
+            36
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 3,
+              "column": 21
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "exports",
+            "range": [
+              37,
+              44
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 22
+              },
+              "end": {
+                "line": 3,
+                "column": 29
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "__esModule",
+            "raw": "\"__esModule\"",
+            "range": [
+              46,
+              58
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 31
+              },
+              "end": {
+                "line": 3,
+                "column": 43
+              }
+            }
+          },
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "value",
+                  "range": [
+                    64,
+                    69
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 7
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": true,
+                  "raw": "true",
+                  "range": [
+                    71,
+                    75
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 13
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  64,
+                  75
+                ],
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 13
+                  }
+                }
+              }
+            ],
+            "range": [
+              60,
+              77
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 45
+              },
+              "end": {
+                "line": 5,
+                "column": 1
+              }
+            }
+          }
+        ],
+        "range": [
+          15,
+          78
+        ],
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 0
+          },
+          "end": {
+            "line": 5,
+            "column": 2
+          }
+        }
+      },
+      "range": [
+        15,
+        79
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "exports",
+            "range": [
+              80,
+              87
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 6,
+                "column": 7
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "curry",
+            "range": [
+              88,
+              93
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 8
+              },
+              "end": {
+                "line": 6,
+                "column": 13
+              }
+            }
+          },
+          "range": [
+            80,
+            93
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 6,
+              "column": 13
+            }
+          }
+        },
+        "right": {
+          "type": "Identifier",
+          "name": "curry",
+          "range": [
+            96,
+            101
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 16
+            },
+            "end": {
+              "line": 6,
+              "column": 21
+            }
+          }
+        },
+        "range": [
+          80,
+          101
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 21
+          }
+        }
+      },
+      "range": [
+        80,
+        102
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "_curryN",
+            "range": [
+              108,
+              115
+            ],
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 4
+              },
+              "end": {
+                "line": 8,
+                "column": 11
+              }
+            }
+          },
+          "init": {
+            "type": "CallExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "require",
+              "range": [
+                118,
+                125
+              ],
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 14
+                },
+                "end": {
+                  "line": 8,
+                  "column": 21
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": "./curryN",
+                "raw": "'./curryN'",
+                "range": [
+                  126,
+                  136
+                ],
+                "loc": {
+                  "start": {
+                    "line": 8,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 32
+                  }
+                }
+              }
+            ],
+            "range": [
+              118,
+              137
+            ],
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 14
+              },
+              "end": {
+                "line": 8,
+                "column": 33
+              }
+            }
+          },
+          "range": [
+            108,
+            137
+          ],
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 4
+            },
+            "end": {
+              "line": 8,
+              "column": 33
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        104,
+        138
+      ],
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 34
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Returns a curried variant of the provided function.\n *\n * @since v0.1.0\n * @param {Function} fn - The function to be curried\n * @return {Function} The curried function\n * @example\n *   const greeter = (greeting, name) => `${greeting} ${name}`\n *   const curriedGreeter = curry(greeter)\n *   const helloGreeting = curriedGreeter('Hello')\n *   helloGreeting('Buzz') // => 'Hello Buzz'\n *\n *   const add = (a, b) => a + b\n *   const curriedAdd = curry(add)\n *   const addThree = curriedAdd(3)\n *   addThree(50) // => 53\n ",
+          "range": [
+            140,
+            667
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 0
+            },
+            "end": {
+              "line": 26,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "curry",
+        "range": [
+          677,
+          682
+        ],
+        "loc": {
+          "start": {
+            "line": 27,
+            "column": 9
+          },
+          "end": {
+            "line": 27,
+            "column": 14
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "fn",
+          "range": [
+            683,
+            685
+          ],
+          "loc": {
+            "start": {
+              "line": 27,
+              "column": 15
+            },
+            "end": {
+              "line": 27,
+              "column": 17
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ReturnStatement",
+            "argument": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "SequenceExpression",
+                  "expressions": [
+                    {
+                      "type": "Literal",
+                      "value": 0,
+                      "raw": "0",
+                      "range": [
+                        699,
+                        700
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 28,
+                          "column": 10
+                        },
+                        "end": {
+                          "line": 28,
+                          "column": 11
+                        }
+                      }
+                    },
+                    {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "_curryN",
+                        "range": [
+                          702,
+                          709
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 28,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 28,
+                            "column": 20
+                          }
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "curryN",
+                        "range": [
+                          710,
+                          716
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 28,
+                            "column": 21
+                          },
+                          "end": {
+                            "line": 28,
+                            "column": 27
+                          }
+                        }
+                      },
+                      "range": [
+                        702,
+                        716
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 28,
+                          "column": 13
+                        },
+                        "end": {
+                          "line": 28,
+                          "column": 27
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    699,
+                    716
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 28,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 28,
+                      "column": 27
+                    }
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "fn",
+                      "range": [
+                        718,
+                        720
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 28,
+                          "column": 29
+                        },
+                        "end": {
+                          "line": 28,
+                          "column": 31
+                        }
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "length",
+                      "range": [
+                        721,
+                        727
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 28,
+                          "column": 32
+                        },
+                        "end": {
+                          "line": 28,
+                          "column": 38
+                        }
+                      }
+                    },
+                    "range": [
+                      718,
+                      727
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 28,
+                        "column": 29
+                      },
+                      "end": {
+                        "line": 28,
+                        "column": 38
+                      }
+                    }
+                  }
+                ],
+                "range": [
+                  698,
+                  728
+                ],
+                "loc": {
+                  "start": {
+                    "line": 28,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 28,
+                    "column": 39
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Identifier",
+                  "name": "fn",
+                  "range": [
+                    729,
+                    731
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 28,
+                      "column": 40
+                    },
+                    "end": {
+                      "line": 28,
+                      "column": 42
+                    }
+                  }
+                }
+              ],
+              "range": [
+                698,
+                732
+              ],
+              "loc": {
+                "start": {
+                  "line": 28,
+                  "column": 9
+                },
+                "end": {
+                  "line": 28,
+                  "column": 43
+                }
+              }
+            },
+            "range": [
+              691,
+              733
+            ],
+            "loc": {
+              "start": {
+                "line": 28,
+                "column": 2
+              },
+              "end": {
+                "line": 28,
+                "column": 44
+              }
+            }
+          }
+        ],
+        "range": [
+          687,
+          735
+        ],
+        "loc": {
+          "start": {
+            "line": 27,
+            "column": 19
+          },
+          "end": {
+            "line": 29,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        668,
+        735
+      ],
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 0
+        },
+        "end": {
+          "line": 29,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Returns a curried variant of the provided function.\n *\n * @since v0.1.0\n * @param {Function} fn - The function to be curried\n * @return {Function} The curried function\n * @example\n *   const greeter = (greeting, name) => `${greeting} ${name}`\n *   const curriedGreeter = curry(greeter)\n *   const helloGreeting = curriedGreeter('Hello')\n *   helloGreeting('Buzz') // => 'Hello Buzz'\n *\n *   const add = (a, b) => a + b\n *   const curriedAdd = curry(add)\n *   const addThree = curriedAdd(3)\n *   addThree(50) // => 53\n ",
+          "range": [
+            140,
+            667
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 0
+            },
+            "end": {
+              "line": 26,
+              "column": 3
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    735
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 29,
+      "column": 1
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * Returns a curried variant of the provided function.\n *\n * @since v0.1.0\n * @param {Function} fn - The function to be curried\n * @return {Function} The curried function\n * @example\n *   const greeter = (greeting, name) => `${greeting} ${name}`\n *   const curriedGreeter = curry(greeter)\n *   const helloGreeting = curriedGreeter('Hello')\n *   helloGreeting('Buzz') // => 'Hello Buzz'\n *\n *   const add = (a, b) => a + b\n *   const curriedAdd = curry(add)\n *   const addThree = curriedAdd(3)\n *   addThree(50) // => 53\n ",
+      "range": [
+        140,
+        667
+      ],
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 26,
+          "column": 3
+        }
+      }
+    }
+  ]
+}
